@@ -1,36 +1,16 @@
-import java.util.*;
+import java.util.List;
+import java.util.Set;
 
 public class RoleService {
-    private static RoleDao roleDao;
+    
+    public Set<Roles> findAll();
 
-    public RoleService() {
-        roleDao = new RoleDao();
-    }
+    public Roles findById(Long id);
 
-    public Set<Roles> findAll() {
-        List<Roles> roleList = roleDao.findAll();
-        Set<Roles> roles = new HashSet<Roles>(roleList); 
-        return roles;
-    }
+    public void addRole(String stringRole);
 
-    public Roles findById(Long id) {
-        Roles role = roleDao.findById(id);
-        return role;
-    }
+    public void updateRole(Long id, String urole);
 
-    public void addRole(String stringRole) {
-        Roles newRole = new Roles();
-        newRole.setRole(stringRole);
-        roleDao.addRole(newRole);
-    }
+    public void deleteRole(Long id);
 
-    public void updateRole(Long id, String urole) {
-        Roles r = findById(id);
-        r.setRole(urole);
-        roleDao.roleUpdate(r);
-    }
-
-    public void deleteRole(Long id) {
-        roleDao.deleteRole(id);
-    }
 }
