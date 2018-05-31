@@ -2,7 +2,7 @@ import java.util.List;
 
 public interface RoleDao {
 
-  public Set<Roles> findAll();
+  	public List<Roles> findAll();
 
 	public void addRole(Roles r);
 

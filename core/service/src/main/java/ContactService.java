@@ -1,4 +1,4 @@
-public class ContactService {
+public interface ContactService {
 
     public void addContactToPersonnel(Personnel p);
 

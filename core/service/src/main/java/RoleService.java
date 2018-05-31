@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Set;
 
-public class RoleService {
+public interface RoleService {
     
     public Set<Roles> findAll();
 

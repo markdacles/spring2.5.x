@@ -1,53 +1,47 @@
 import java.time.*;
 import java.util.*;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 public class PersonnelDaoImpl implements PersonnelDao{
 
+    private SessionFactory sessionFactory;
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+      this.sessionFactory = sessionFactory;
+    }
+
+    public Session getCurrentSession() {
+      return sessionFactory.getCurrentSession();
+    }
+
   	public void addPersonnel(Personnel p) {
-  		HibernateUtil.openCurrentSessionWithTrans();
-  		HibernateUtil.getCurrentSession().save(p);
-  		HibernateUtil.closeCurrentSessionWithTrans();
+  		getCurrentSession().save(p);
   	}
 
   	public List<Personnel> findAll() {
-		HibernateUtil.openCurrentSession();
-    List<Personnel> personnelList = (List<Personnel>) HibernateUtil.getCurrentSession().createQuery("from Personnel").setCacheable(true).list();
-    HibernateUtil.closeCurrentSession();
-    return personnelList;
+    return (List<Personnel>) getCurrentSession().createQuery("from Personnel").setCacheable(true).list();
   	}
 
     public Personnel getPersonnel(Long id) {
-      HibernateUtil.openCurrentSession();
-      Personnel personnel = (Personnel) HibernateUtil.getCurrentSession().get(Personnel.class, id);
-      HibernateUtil.closeCurrentSession();
-      return personnel;
+      return (Personnel) getCurrentSession().get(Personnel.class, id);
     }
 
     public void personnelUpdate(Personnel p) {
-      HibernateUtil.openCurrentSessionWithTrans();
-      HibernateUtil.getCurrentSession().update(p);
-      HibernateUtil.closeCurrentSessionWithTrans();
+      getCurrentSession().update(p);
     }
 
     public void deletePersonnel(Long id) {
-      HibernateUtil.openCurrentSessionWithTrans();
-      Personnel p = (Personnel) HibernateUtil.getCurrentSession().get(Personnel.class, id);
-      HibernateUtil.getCurrentSession().delete(p);
-      HibernateUtil.closeCurrentSessionWithTrans();
+      Personnel p = (Personnel) getCurrentSession().get(Personnel.class, id);
+      getCurrentSession().delete(p);
     }
 
     public Personnel findById(Long id) {
-      HibernateUtil.openCurrentSession();
-      Personnel personnel = (Personnel) HibernateUtil.getCurrentSession().get(Personnel.class, id);
-      System.out.println("ping"); 
-      HibernateUtil.closeCurrentSession();
-      return personnel;
+      return (Personnel) HibernateUtil.getCurrentSession().get(Personnel.class, id);
     }
 
     public boolean checkPerson(Long id) {
-      HibernateUtil.openCurrentSession();
-      Personnel personnel = (Personnel) HibernateUtil.getCurrentSession().get(Personnel.class, id);
-      HibernateUtil.closeCurrentSession();
+      Personnel personnel = (Personnel) getCurrentSession().get(Personnel.class, id);
       if(personnel == null) {
         return false;
       } else {
@@ -56,20 +50,14 @@ public class PersonnelDaoImpl implements PersonnelDao{
     }
 
     public void addContactToPersonnel(Personnel p) {
-      HibernateUtil.openCurrentSessionWithTrans();
-      HibernateUtil.getCurrentSession().update(p);
-      HibernateUtil.closeCurrentSessionWithTrans();
+      getCurrentSession().update(p);
     }
 
     public void contactUpdate(Personnel p) {
-      HibernateUtil.openCurrentSessionWithTrans();
-      HibernateUtil.getCurrentSession().update(p);
-      HibernateUtil.closeCurrentSessionWithTrans();
+      getCurrentSession().update(p);
     }
 
     public void removeContact(Personnel p) {
-      HibernateUtil.openCurrentSessionWithTrans();
-      HibernateUtil.getCurrentSession().update(p);
-      HibernateUtil.closeCurrentSessionWithTrans();
+      getCurrentSession().update(p);
     }
 }

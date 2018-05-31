@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class PersonnelService {
+public interface PersonnelService {
 
     public void addPersonnel(Personnel p);
 
@@ -10,7 +10,7 @@ public class PersonnelService {
 
     public void deletePersonnel(Long id);
 
-    public static void showRoles();
+    public void showRoles();
 
 	public Personnel findById(Long id);
 
