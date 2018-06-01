@@ -33,7 +33,7 @@
       <dependency>
           <groupId>org.hibernate</groupId>
           <artifactId>hibernate-core</artifactId>
-          <version>5.2.16.Final</version>
+          <version>4.2.7.Final</version>
       </dependency>
 
       <dependency>
@@ -81,7 +81,7 @@
       <dependency>
           <groupId>org.hibernate</groupId>
           <artifactId>hibernate-ehcache</artifactId>
-          <version>5.2.16.Final</version>
+          <version>4.2.7.Final</version>
       </dependency>
 
       <dependency>
@@ -90,11 +90,12 @@
         <version>1.7.21</version>
       </dependency>
 
-      <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-servlets</artifactId>
-        <version>9.4.10.v20180503</version>
-      </dependency>
+       <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>3.0.1</version>
+          <scope>provided</scope>
+        </dependency>
 
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
@@ -181,16 +182,13 @@
           <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
           <version>9.4.10.v20180503</version>
-          <configuration>
-            <scanIntervalSeconds>10</scanIntervalSeconds> 
-          </configuration>
         </plugin>
 
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>3.2.0</version>
-          </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.2.0</version>
+        </plugin>
 
       </plugins>
     </pluginManagement>
