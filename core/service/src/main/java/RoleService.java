@@ -3,14 +3,14 @@ import java.util.Set;
 
 public interface RoleService {
     
-    public Set<Roles> findAll();
+    public List<Roles> listRoles();
 
-    public Roles findById(Long id);
+    public Roles findById(Long id, String object);
 
-    public void addRole(String stringRole);
+    // public void addRole(String stringRole);
 
-    public void updateRole(Long id, String urole);
+    // public void updateRole(Long id, String urole);
 
-    public void deleteRole(Long id);
+    // public void deleteRole(Long id);
 
 }

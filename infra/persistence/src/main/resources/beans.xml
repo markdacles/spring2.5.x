@@ -3,16 +3,20 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/tx
     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
 	http://www.springframework.org/schema/aop 
-	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
     <!-- DAO BEANS -->
 	<bean id="personnelDao" class="PersonnelDaoImpl" autowire="byName"/>
 	<bean id="roleDao" class="RoleDaoImpl" autowire="byName"/>
+	<bean id="dao" class="DaoImpl" autowire="byName"/>
 
 	<!-- SERVICE BEANS -->
 	<bean id="contactService" class="ContactServiceImpl" autowire="byName"/>
@@ -20,20 +24,23 @@
 	<bean id="personnelService" class="PersonnelServiceImpl" autowire="byName"/>
 
 	<!-- TRANSACTION MANAGEMENT -->
-<!-- 	<bean id = "transactionManager" class = "org.springframework.orm.hibernate3.HibernateTransactionManager">
-		<property name = "sessionFactory" ref = "sessionFactory"/>
+
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 
-	<tx:advice id = "txAdvice" transaction-manager = "transactionManager">
+	<tx:advice id="txAdvice" transaction-manager="txManager">
 		<tx:attributes>
-			<tx:method name = "*"/>
+			<tx:method name="*"/>
 		</tx:attributes>
 	</tx:advice>
 
 	<aop:config>
-		<aop:pointcut id = "serviceMethods" expression = "execution(* com.exist.ecc.core.service.*.*(..))"/>
-		<aop:advisor advice-ref = "txAdvice" pointcut-ref = "serviceMethods"/>
-	</aop:config> -->
+		<aop:pointcut id="serviceMethods"
+			expression="target(Dao)" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods" />
+	</aop:config>
 
 	<!-- HIBERNATE CONFIG BEAN -->
 
@@ -71,11 +78,9 @@
         <property name = "suffix" value = ".jsp"/>
 	</bean>
 
-
-	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" />
-
-	<bean class="Controller" autowire="byName"/>
-	<bean class = "PersonnelController" autowire="byName"/>
-
-	
+	<bean class = "org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+	<bean name = "/" class = "IndexController" autowire = "byName" /> 
+	<bean name = "/listPersonnel" class = "PersonnelController" autowire = "byName"/>
+	<bean name = "/addPersonnel" class = "PersonnelController" autowire = "byName"/>
+	<bean name = "/processPersonnel" class = "PersonnelController" autowire = "byName"/>
 </beans>

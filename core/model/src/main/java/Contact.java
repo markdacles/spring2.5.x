@@ -13,34 +13,27 @@ public class Contact {
     @Column(name = "contact_id")
 	private Long contactId;
 	
-    @Column(name = "landline")
-    private String landline;
+    @Column(name = "contact_type")
+    private String contactType;
 	
-    @Column(name = "mobile")
-    private String mobile;
-	
-    @Column(name = "email")
-    private String email;
+    @Column(name = "contact_details")
+    private String contactDetails;
 
     public Contact() { }
 
-    public Contact(String landline, String mobile, String email) { 
-        this.landline = landline;
-        this.mobile = mobile;
-        this.email = email;
+    public Contact(String contactType, String contactDetails) { 
+        this.contactType = contactType;
+        this.contactDetails = contactDetails;
     }
 
 	public Long getContactId() { return contactId; }
     public void setContactId(Long cid) { contactId = cid; }  
 
-    public String getLandline() { return landline; }
-    public void setLandline(String l) { landline = l; }  
+    public String getContactType() { return contactType; }
+    public void setContactType(String ct) { contactType = ct; }  
 
-    public String getMobile() { return mobile; }
-    public void setMobile(String m) { mobile = m; }  
-
-    public String getEmail() { return email; }
-    public void setEmail(String e) { email = e; } 
+    public String getContactDetails() { return contactDetails; }
+    public void setContactDetails(String cd) { contactDetails = cd; }  
 
     @Override
     public boolean equals(Object obj) {

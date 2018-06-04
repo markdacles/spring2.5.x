@@ -11,19 +11,16 @@
     <body>
         <h2>Manage Personnel</h2>
          <hr/>
-        <form action="/personnelIndex/addPersonnel">
-            <button type="submit">Add Person</button>
+        <form action="/addPersonnel">
+            <button type="submit">Add Personnel</button>
         </form>
 
         <div>
             <table border = "1" width = "100%">
                 <tr bgcolor = "#D3D3D3">
                     <th><a href = "/personnelmgt?sortby=<c:out value='id'/>" >ID</a></th>
-                    <th><a href = "/personnelmgt?sortby=<c:out value='fname'/>" >First Name</a></th>
-                    <th><a href = "/personnelmgt?sortby=<c:out value='mname'/>" >Middle Name</a></th>
-                    <th><a href = "/personnelmgt?sortby=<c:out value='lname'/>" >Last Name</a></th>
-                    <th><a href = "/personnelmgt?sortby=<c:out value='brgy'/>" >Barangay</a></th>
-                    <th><a href = "/personnelmgt?sortby=<c:out value='city'/>" >City</a></th>
+                    <th><a href = "/personnelmgt?sortby=<c:out value='name'/>" >Name</a></th>
+                    <th><a href = "/personnelmgt?sortby=<c:out value='address'/>" >Address</a></th>
                     <th><a href = "/personnelmgt?sortby=<c:out value='bday'/>" >Birthday</a></th>
                     <th><a href = "/personnelmgt?sortby=<c:out value='gwa'/>" >GWA</a></th>
                     <th><a href = "/personnelmgt?sortby=<c:out value='datehired'/>" >Date Hired</a></th>
@@ -36,15 +33,15 @@
                 <c:forEach items = "${personnelList}" var = "p">
                     <tr>
                         <td>${p.id}</td>
-                        <td>${p.name.fname}</td>
-                        <td>${p.name.mname}</td>
-                        <td>${p.name.lname}</td>
-                        <td>${p.address.brgy}</td>
-                        <td>${p.address.city}</td>
+                        <td>${p.name.lname}, ${p.name.fname} ${p.name.mname}</td>
+                        <td>${p.address.brgy}, ${p.address.city}</td>
                         <td><fmt:formatDate pattern = "dd/MM/yyyy" value = "${p.birthday}" /></td>
                         <td>${p.gwa}</td>
                         <td><fmt:formatDate pattern = "dd/MM/yyyy" value = "${p.dateHired}" /></td>
-                        <td><a href = "/contactmgt?personnelId=<c:out value='${p.id}'/>" >View Contact</a></td>
+                        <td>
+                            <c:forEach items = "${p.contact}" var = "c">
+                                ${c.contactType}: ${c.contactDetails}
+                            </c:forEach>
                         <td><a href = "/proles?personnelId=<c:out value='${p.id}'/>" >View Roles</a></td>
                         <td><a href = "/updatePersonnel?personnelId=<c:out value='${p.id}'/>" >Update Person</a></td>
                         <td valign="bottom">
@@ -57,7 +54,7 @@
             </table>
         </div>
         <br>
-         <form action="index.jsp">
+         <form action="/">
             <button type="submit">Back</button>
         </form>
     </body>

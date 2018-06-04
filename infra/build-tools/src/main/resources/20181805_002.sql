@@ -21,9 +21,8 @@ CREATE TABLE roles (
 
 CREATE TABLE contact (
     contact_id serial PRIMARY KEY,
-    email character varying(255),
-    landline character varying(255),
-    mobile character varying(255),
+    contact_type character varying(255),
+    contact_details character varying(255),
     personnel_id serial REFERENCES personnel(id)
 );
 
