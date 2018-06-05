@@ -7,10 +7,10 @@ public interface RoleService {
 
     public Roles findById(Long id, String object);
 
-    // public void addRole(String stringRole);
+    public void addRole(Roles r);
 
-    // public void updateRole(Long id, String urole);
+    public void updateRole(Roles r);
 
-    // public void deleteRole(Long id);
+    public void deleteRole(Long id, String object);
 
 }

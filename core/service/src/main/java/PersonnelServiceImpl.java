@@ -16,13 +16,21 @@ public class PersonnelServiceImpl implements PersonnelService{
     //   this.roleServiceImpl = roleServiceImpl;
     // }
 
+    public Personnel findById(Long id, String object) {
+        return (Personnel) dao.findById(id, "Personnel");
+    }
+
+    public void deletePersonnel(Long id, String object) {
+        dao.delete(id, "Personnel");
+    }
+
     public void addPersonnel(Personnel p) {
 		  dao.add(p);
     }
 
-  //   public void updatePersonnel(Personnel p) {
-  //   	personnelDaoImpl.personnelUpdate(p);
-  //   }
+    public void updatePersonnel(Personnel p) {
+    	dao.update(p);
+    }
 
     public List<Personnel> listPersonnel() {
     	return dao.getList("Personnel");

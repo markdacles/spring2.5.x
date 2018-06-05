@@ -83,4 +83,10 @@
 	<bean name = "/listPersonnel" class = "PersonnelController" autowire = "byName"/>
 	<bean name = "/addPersonnel" class = "PersonnelController" autowire = "byName"/>
 	<bean name = "/processPersonnel" class = "PersonnelController" autowire = "byName"/>
+	<bean name = "/updatePersonnel" class = "PersonnelController" autowire = "byName"/>
+	<bean name = "/deletePersonnel" class = "PersonnelController" autowire = "byName"/>
+	<bean name = "/listRoles" class = "RoleController" autowire = "byName"/>
+	<bean name = "/manageRoles" class = "RoleController" autowire = "byName"/>
+	<bean name = "/processRole" class = "RoleController" autowire = "byName"/>
+	<bean name = "/deleteRole" class = "RoleController" autowire = "byName"/>
 </beans>

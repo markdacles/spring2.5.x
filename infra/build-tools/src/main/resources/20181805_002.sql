@@ -23,7 +23,7 @@ CREATE TABLE contact (
     contact_id serial PRIMARY KEY,
     contact_type character varying(255),
     contact_details character varying(255),
-    personnel_id serial REFERENCES personnel(id)
+    personnel_id bigint REFERENCES personnel(id)
 );
 
 CREATE TABLE personnel_roles (

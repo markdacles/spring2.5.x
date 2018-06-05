@@ -20,14 +20,6 @@ public class Name {
 
     public Name() { }
 
-    public Name(String lname, String fname, String mname, String suffix, String title) {
-        this.lname = lname;
-        this.fname = fname;
-        this.mname = mname;
-        this.suffix = suffix;
-        this.title = title;
-    }
-
     public String getLname() { return lname; }
     public void setLname(String l) { lname = l; }
 
@@ -42,6 +34,5 @@ public class Name {
 
     public String getTitle() { return title; }
     public void setTitle(String t) { title = t; }    
-
 
 }

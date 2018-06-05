@@ -40,14 +40,18 @@
                         <td><fmt:formatDate pattern = "dd/MM/yyyy" value = "${p.dateHired}" /></td>
                         <td>
                             <c:forEach items = "${p.contact}" var = "c">
-                                ${c.contactType}: ${c.contactDetails}
+                                ${c.contactType}: ${c.contactDetails} </br>
                             </c:forEach>
-                        <td><a href = "/proles?personnelId=<c:out value='${p.id}'/>" >View Roles</a></td>
-                        <td><a href = "/updatePersonnel?personnelId=<c:out value='${p.id}'/>" >Update Person</a></td>
-                        <td valign="bottom">
-                            <form name="${p}" action="/deletePersonnel?personnelid=<c:out value='${p.id}'/>" method="POST">
-                                <a href="javascript:document.forms['${p}'].submit()">Delete Personnel</a>
-                            </form>
+                        <td>
+                            <c:forEach items = "${p.roles}" var = "r">
+                                ${r.role}</br>
+                            </c:forEach>
+                        </td>
+                        <td>
+                            <a href = "/updatePersonnel?pid=<c:out value='${p.id}'/>" >Update Personnel</a>
+                        </td>
+                        <td>
+                            <a href = "/deletePersonnel?pid=<c:out value='${p.id}'/>" >Delete Personnel</a>
                         </td>
                     </tr>
                 </c:forEach>

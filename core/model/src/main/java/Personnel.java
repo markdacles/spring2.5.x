@@ -86,5 +86,4 @@ public class Personnel {
 
     public Set<Roles> getRoles() { return roles; }
     public void setRoles(Set rroles) { roles = rroles; }
-
 }

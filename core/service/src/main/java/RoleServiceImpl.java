@@ -16,20 +16,16 @@ public class RoleServiceImpl implements RoleService {
         return (Roles) dao.findById(id, "Roles");
     }
 
-    // public void addRole(String stringRole) {
-    //     Roles newRole = new Roles();
-    //     newRole.setRole(stringRole);
-    //     roleDaoImpl.addRole(newRole);
-    // }
+    public void addRole(Roles r) {
+        dao.add(r);
+    }
 
-    // public void updateRole(Long id, String urole) {
-    //     Roles r = findById(id);
-    //     r.setRole(urole);
-    //     roleDaoImpl.roleUpdate(r);
-    // }
+    public void updateRole(Roles r) {
+        dao.update(r);
+    }
 
-    // public void deleteRole(Long id) {
-    //     roleDaoImpl.deleteRole(id);
-    // }
+    public void deleteRole(Long id, String object) {
+        dao.delete(id, "Roles");
+    }
 
 }

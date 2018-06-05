@@ -4,80 +4,81 @@
 
 <html>
     <head>
-        <title>Personnel Form</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <title>${requestStatus}</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
 
     <body>
-        <h2>Add Personnel</h2>
+        <h2>Personnel Form</h2>
         <hr/>
         <br>
 
         <form action = "/processPersonnel" method = "POST">
             First Name:
-                <input type = "text" name = "fname"><br/> 
+                <input type = "text" name = "fname" value="${personnel.name.fname}" maxlength="20"><br/> 
             Middle Name:
-                <input type = "text" name = "mname" maxlength="20"/><br/>
+                <input type = "text" name = "mname" value="${personnel.name.mname}" maxlength="20"/><br/>
             Last Name:
-                <input type = "text" name = "lname" maxlength="20"/><br/>
+                <input type = "text" name = "lname" value="${personnel.name.lname}" maxlength="20"/><br/>
             Barangay:
-                <input type = "text" name = "barangay" maxlength="20"/><br/>
+                <input type = "text" name = "barangay" value="${personnel.address.brgy}" maxlength="20"/><br/>
             City:   
-                <input type = "text" name = "city" maxlength="20"/><br/>
+                <input type = "text" name = "city" value="${personnel.address.city}" maxlength="20"/><br/>
             Birthday:
-                <input type = "date" name = "birthday"/><br/><br/>
+                <input type = "date" name = "birthday" value="${personnel.birthday}" /><br/><br/>
             GWA:
-                <input type = "number" min="1" max="5" step = "0.01" name = "gwa"/><br/>
+                <input type = "number" min="1" max="5" step = "0.01" name = "gwa" value="${personnel.gwa}"/><br/>
             Date Hired:
-                <input type = "date" name = "date_hired"/><br/><br/>
+                <input type = "date" name = "date_hired" value="${personnel.dateHired}"/><br/><br/>
 
-            <!-- Input landline with jquery for add and remove-->
-                Landline:
-                <input type="button" id="landline" value="+"/>
-                 <script>
-                    $("#landline").click(function(){ 
-                        $("#contactNumber").append('<input type="hidden" name="contactType" value="Landline"/>Landline: ' + '<input type="text" name="contactDetails"/>' + '<button class="delete">Remove</button><br>');
-                    });
-                </script> 
-
-            <!-- Input mobile with jquery for add and remove-->
-            <br>Mobile:
-            <input type="button" id="mobile" value="+"/>
-            <script>
-                $("#mobile").click(function(){ 
-                    $("#contactNumber").append('<input type="hidden" name="contactType" value="Mobile"/>Mobile: ' + '<input type="text" name="contactDetails"/>' + '<button class="delete">Remove</button><br>');
-                });
-            </script>
-            <!-- Input email with jquery for add and remove-->
-            <br>Email:
-            <input type="button" id="email" value="+"/>
-            <script>
-                $("#email").click(function(){ 
-                    $("#contactNumber").append('<input type="hidden" name="contactType" value="Email"/>E-mail: ' + '<input type="text" name="contactDetails"/>' + '<button class="delete">Remove</button><br>');
-                });
-            </script>
-
-           <div id="contactNumber">
-                <br>
-                <c:forEach var="c" items="${contact}">
-                    <div>${c.contactType}: <input type="text" value="${c.contactDetails}" name="contactDetails"/> 
-                    <input type="hidden" value="${c.id}" name="contactId">
-                    <input type="hidden" value="${c.contactType}" name="contactType"/>
-                    <button class="delete">Remove</button> <!--form:errors class="error" path="contacts"/--></div>
-                </c:forEach>
+            Landline: 
+                <input type="button" value="+" id="addLandline"/> </br> 
+            Mobile: 
+                <input type="button" value="+" id="addMobile"/> </br>
+            Email: 
+                <input type="button" value="+" id="addEmail"/> <br>
+            <br>
+            <div id = "contactSection">
+            <c:forEach items="${personnel.contact}" var="c">
+                <div>
+                    <input type="hidden" name="contactType" value="${c.contactType}"/>${c.contactType} : 
+                        <input type="text" name="contactDetails" value="${c.contactDetails}"/><input type='button' id='remove-button' value='-'><br>
+                </div>
+            </c:forEach>
             </div>
+
+            <script>
+                $("#addLandline").click(function() {
+                    $("#contactSection").append('<div>' + '<input type="hidden" name="contactType" value="Landline"/>Landline : ' + '<input type="text" name="contactDetails"/>' + "<input type='button' id='remove-button' value='-'><br></div>");
+                });
+
+                $("#addMobile").click(function() {
+                       $("#contactSection").append('<div>' + '<input type="hidden" name="contactType" value="Mobile"/>Mobile : ' + '<input type="text" name="contactDetails"/>' +  "<input type='button' id='remove-button' value='-'><br></div>");
+                });
+
+                $("#addEmail").click(function() {
+                   $("#contactSection").append('<div>' + '<input type="hidden" name="contactType" value="Email"/>Email : ' + '<input type="text" name="contactDetails"/>' +  "<input type='button' id='remove-button' value='-'><br></div>");
+                });
+
+                $(document).on('click', '#remove-button', function() {
+                        $(this).closest("div").remove();
+                });
+            </script> 
 
             <br>
             Roles:<br>
-                <c:forEach items="${roleList}" var="r">
-                    <input type="checkbox" name="checkedRoles" value="<c:out value='${r.roleId}'/>"/><c:out value="${r.role}"/><br/>
-                </c:forEach>
-<br/>
 
-            <input type = "submit" value = "Add Person" />
+                <c:forEach items="${roleList}" var="r">
+                    <c:set var="checked" value="${personnel.roles.contains(r) ? 'checked' : ''}"/>
+                    <input type="checkbox" name="checkedRoles" value="${r.roleId}" ${checked}/>${r.role}<br/>
+                </c:forEach>
+            <br/>
+            <input type = "hidden" name="pid" value="${personnel.id}">
+            <input type = "hidden" name="requestStatus" value="${requestStatus}">
+            <input type = "submit" value = "${requestStatus}" />
         </form>
         <br>
-         <form action="personnelmgt">
+         <form action="/listPersonnel">
             <button type="submit">Back</button>
         </form>
     </body>

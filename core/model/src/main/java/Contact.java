@@ -38,14 +38,18 @@ public class Contact {
     @Override
     public boolean equals(Object obj) {
         if (obj == null) return false;
-        if (!(obj instanceof Contact))
-            return false;
-        if (obj == this)
+        if (!this.getClass().equals(obj.getClass())) return false;
+          Contact obj2 = (Contact)obj;
+          if(this.contactDetails.equals(obj2.getContactDetails())){
             return true;
-        return this.getContactId() == ((Contact) obj).getContactId();
+          }
+        return false;
     }
-
+  
+    @Override
     public int hashCode() {
-        return Objects.hash(contactId);
+        int tmp = 0;
+        tmp = ( contactDetails ).hashCode();
+        return tmp;
     }
 }
