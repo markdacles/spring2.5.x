@@ -36,7 +36,7 @@
             </table>
         </div>
         <br>
-         <form action="index.jsp">
+         <form action="/">
             <button type="submit">Back</button>
         </form>
     </body>

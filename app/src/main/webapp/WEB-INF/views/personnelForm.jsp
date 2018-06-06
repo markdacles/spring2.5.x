@@ -1,42 +1,66 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page isELIgnored="false" %>
 
-<html>
+<html lang="en">
     <head>
-        <title>${requestStatus}</title>
+        <title><spring:message code="label.${pact}"/></title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
 
     <body>
-        <h2>Personnel Form</h2>
+        <h2 style="display: inline-block;"><spring:message code="label.${pact}"/></h2> 
+        <div style="float: right;display: inline-block;"> 
+            <a href="/processPersonnel?action=${pacts}&lang=en">[EN]</a>
+            <a href="/processPersonnel?action=${pacts}&lang=wry">[WRY]</a>
+        </div>
         <hr/>
         <br>
+        <form:form method="POST" commandName="personnel">
 
-        <form action = "/processPersonnel" method = "POST">
-            First Name:
-                <input type = "text" name = "fname" value="${personnel.name.fname}" maxlength="20"><br/> 
-            Middle Name:
-                <input type = "text" name = "mname" value="${personnel.name.mname}" maxlength="20"/><br/>
-            Last Name:
-                <input type = "text" name = "lname" value="${personnel.name.lname}" maxlength="20"/><br/>
-            Barangay:
-                <input type = "text" name = "barangay" value="${personnel.address.brgy}" maxlength="20"/><br/>
-            City:   
-                <input type = "text" name = "city" value="${personnel.address.city}" maxlength="20"/><br/>
-            Birthday:
-                <input type = "date" name = "birthday" value="${personnel.birthday}" /><br/><br/>
+            <spring:message code="label.fname"/>:
+            <form:input path="name.fname" value = "${personnel.name.fname}"/>
+            <form:errors class="error" path="name.fname"/><br/>
+
+            <spring:message code="label.mname"/>:
+            <form:input path="name.mname" value = "${personnel.name.mname}"/>
+            <form:errors class="error" path="name.mname"/><br/>
+
+            <spring:message code="label.lname"/>:
+            <form:input path="name.lname" value = "${personnel.name.lname}"/>
+            <form:errors class="error" path="name.lname"/><br/>
+
+            <spring:message code="label.brgy"/>:
+            <form:input path="address.brgy" value = "${personnel.address.brgy}"/>
+            <form:errors class="error" path="address.brgy"/><br/>
+
+            <spring:message code="label.city"/>:  
+            <form:input path="address.city" value = "${personnel.address.city}"/>
+            <form:errors class="error" path="address.city"/><br/>
+
+            <spring:message code="label.birthday"/>:
+            <form:input path="birthday" type="date" value = "${personnel.birthday}"/>
+            <form:errors class="error" path="birthday"/><br/>
+            
             GWA:
-                <input type = "number" min="1" max="5" step = "0.01" name = "gwa" value="${personnel.gwa}"/><br/>
-            Date Hired:
-                <input type = "date" name = "date_hired" value="${personnel.dateHired}"/><br/><br/>
+            <form:input path="gwa" value = "${personnel.gwa}"/>
+            <form:errors class="error" path="gwa"/><br/>
+            
+            <spring:message code="label.dateHired"/>:
+            <form:input path="dateHired" type="date" value = "${personnel.dateHired}"/>
+            <form:errors class="error" path="dateHired"/><br/>
 
-            Landline: 
-                <input type="button" value="+" id="addLandline"/> </br> 
-            Mobile: 
-                <input type="button" value="+" id="addMobile"/> </br>
-            Email: 
-                <input type="button" value="+" id="addEmail"/> <br>
+            Landline:
+            <input type="button" value="+" id="addLandline"/> </br> 
+
+            Mobile:
+            <input type="button" value="+" id="addMobile"/> </br>
+
+            Email:
+            <input type="button" value="+" id="addEmail"/> <br>
+
             <br>
             <div id = "contactSection">
             <c:forEach items="${personnel.contact}" var="c">
@@ -66,7 +90,7 @@
             </script> 
 
             <br>
-            Roles:<br>
+            <spring:message code="label.roles"/>:</br>
 
                 <c:forEach items="${roleList}" var="r">
                     <c:set var="checked" value="${personnel.roles.contains(r) ? 'checked' : ''}"/>
@@ -74,12 +98,11 @@
                 </c:forEach>
             <br/>
             <input type = "hidden" name="pid" value="${personnel.id}">
-            <input type = "hidden" name="requestStatus" value="${requestStatus}">
-            <input type = "submit" value = "${requestStatus}" />
-        </form>
+            <input type = "submit" value = '<spring:message code="label.submit"/>'>
+        </form:form>
         <br>
          <form action="/listPersonnel">
-            <button type="submit">Back</button>
+            <button type="submit"><spring:message code="label.back"/></button>
         </form>
     </body>
 </html>

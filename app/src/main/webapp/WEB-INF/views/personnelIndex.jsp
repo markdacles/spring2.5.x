@@ -1,33 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page isELIgnored="false" %>
 
 <html>
     <head>
-        <title>Manage Personnel</title>
+        <title><spring:message code="label.${pact}"/></title>
     </head>
 
     <body>
-        <h2>Manage Personnel</h2>
+        <h2 style="display: inline-block;"><spring:message code="label.${pact}"/></h2> 
+        <div style="float: right;display: inline-block;"> 
+            <a href="/listPersonnel?lang=en">[EN]</a>
+            <a href="/listPersonnel?lang=wry">[WRY]</a>
+        </div>
          <hr/>
-        <form action="/addPersonnel">
-            <button type="submit">Add Personnel</button>
+        <form action="/processPersonnel">
+            <input type = "hidden" name="action" value="add">
+            <button type="submit"><spring:message code="label.addp"/></button>
         </form>
 
         <div>
             <table border = "1" width = "100%">
                 <tr bgcolor = "#D3D3D3">
-                    <th><a href = "/personnelmgt?sortby=<c:out value='id'/>" >ID</a></th>
-                    <th><a href = "/personnelmgt?sortby=<c:out value='name'/>" >Name</a></th>
-                    <th><a href = "/personnelmgt?sortby=<c:out value='address'/>" >Address</a></th>
-                    <th><a href = "/personnelmgt?sortby=<c:out value='bday'/>" >Birthday</a></th>
-                    <th><a href = "/personnelmgt?sortby=<c:out value='gwa'/>" >GWA</a></th>
-                    <th><a href = "/personnelmgt?sortby=<c:out value='datehired'/>" >Date Hired</a></th>
-                    <th>Contact</th>
-                    <th>Roles</th>
-                    <th>Update</th>
-                    <th>Delete</th>
+                    <th>ID</a></th>
+                    <th><spring:message code="label.name"/></a></th>
+                    <th><spring:message code="label.address"/></a></th>
+                    <th><spring:message code="label.birthday"/></a></th>
+                    <th>GWA</a></th>
+                    <th><spring:message code="label.dateHired"/></a></th>
+                    <th><spring:message code="label.contact"/></th>
+                    <th><spring:message code="label.roles"/></th>
+                    <th><spring:message code="label.update"/></th>
+                    <th><spring:message code="label.delete"/></th>
                 </tr>
 
                 <c:forEach items = "${personnelList}" var = "p">
@@ -48,10 +54,10 @@
                             </c:forEach>
                         </td>
                         <td>
-                            <a href = "/updatePersonnel?pid=<c:out value='${p.id}'/>" >Update Personnel</a>
+                            <a href = "/processPersonnel?action=update&pid=<c:out value='${p.id}'/>" ><spring:message code="label.updatep"/></a>
                         </td>
                         <td>
-                            <a href = "/deletePersonnel?pid=<c:out value='${p.id}'/>" >Delete Personnel</a>
+                            <a href = "/deletePersonnel?pid=<c:out value='${p.id}&'/>" ><spring:message code="label.deletep"/></a>
                         </td>
                     </tr>
                 </c:forEach>
@@ -59,7 +65,7 @@
         </div>
         <br>
          <form action="/">
-            <button type="submit">Back</button>
+            <button type="submit"><spring:message code="label.back"/></button>
         </form>
     </body>
 </html>

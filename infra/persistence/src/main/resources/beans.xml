@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans.xsd
-    http://www.springframework.org/schema/tx
-    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
-	http://www.springframework.org/schema/aop 
-	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
-	http://www.springframework.org/schema/mvc
-	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+	    http://www.springframework.org/schema/beans/spring-beans.xsd
+	    http://www.springframework.org/schema/tx
+	    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
     <!-- DAO BEANS -->
 	<bean id="personnelDao" class="PersonnelDaoImpl" autowire="byName"/>
@@ -44,7 +47,7 @@
 
 	<!-- HIBERNATE CONFIG BEAN -->
 
-	  <bean id = "dataSource" class = "org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<bean id = "dataSource" class = "org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name = "driverClassName" value = "org.postgresql.Driver"/>
 		<property name = "url" value = "jdbc:postgresql://localhost:5432/personneldb"/>
 		<property name = "username" value = "postgres"/>
@@ -78,15 +81,40 @@
         <property name = "suffix" value = ".jsp"/>
 	</bean>
 
+	<!-- CONTROLLER BEANS -->
 	<bean class = "org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
 	<bean name = "/" class = "IndexController" autowire = "byName" /> 
 	<bean name = "/listPersonnel" class = "PersonnelController" autowire = "byName"/>
 	<bean name = "/addPersonnel" class = "PersonnelController" autowire = "byName"/>
-	<bean name = "/processPersonnel" class = "PersonnelController" autowire = "byName"/>
 	<bean name = "/updatePersonnel" class = "PersonnelController" autowire = "byName"/>
 	<bean name = "/deletePersonnel" class = "PersonnelController" autowire = "byName"/>
 	<bean name = "/listRoles" class = "RoleController" autowire = "byName"/>
 	<bean name = "/manageRoles" class = "RoleController" autowire = "byName"/>
 	<bean name = "/processRole" class = "RoleController" autowire = "byName"/>
 	<bean name = "/deleteRole" class = "RoleController" autowire = "byName"/>
+	<bean name = "/processPersonnel" class = "ProcessPersonnelController" autowire = "byName">
+		<property name="commandName" value="personnel" />
+    	<property name="commandClass" value="Personnel" />
+    	<property name="formView" value="personnelForm"/>
+		<property name="validator" ref="personnelValidator"/>
+	</bean>
+	
+	<bean id = "personnelValidator" class = "PersonnelValidator" autowire = "byName"/>
+	<!-- <bean id = "roleValidator" class = "RoleValidator" autowire = "byName" /> -->
+
+	<!-- LOCALE CHANGER -->
+	<bean id = "messageSource" class = "org.springframework.context.support.ResourceBundleMessageSource">
+		<property name = "basename" value = "messages"/>
+	</bean>
+	
+	<mvc:interceptors>
+		<bean id = "localeChangeInterceptor" class = "org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name = "paramName" value = "lang"/>
+		</bean>
+	</mvc:interceptors>
+
+	<bean id = "localeResolver" class = "org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name = "defaultLocale" value = "en"/>
+	</bean>
+
 </beans>
