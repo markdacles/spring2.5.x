@@ -11,7 +11,7 @@ import java.util.HashSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class ProcessPersonnelController extends SimpleFormController{
+public class AddPersonnelController extends SimpleFormController{
 
 	private PersonnelService personnelService;
 	private RoleService roleService;
@@ -25,30 +25,17 @@ public class ProcessPersonnelController extends SimpleFormController{
 	}
 
 	public void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception {
-        // to actually be able to convert Multipart instance to byte[]
-        // we have to register a custom editor
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         binder.registerCustomEditor(Date.class, new CustomDateEditor(
             dateFormat, true));
-        // now Spring knows how to handle multipart object and convert them
     }
 
 	public ModelAndView showForm(HttpServletRequest request, HttpServletResponse response, BindException errors) throws Exception {
 		ModelAndView mav = new ModelAndView(getFormView());
         mav.addAllObjects(errors.getModel());
-		mav.addObject("roleList", roleService.listRoles());
-		if("add".equals(request.getParameter("action"))){
-			mav.addObject("pact", "add");
-			mav.addObject("pacts", "add");
-		} else if("update".equals(request.getParameter("action"))){
-			Personnel p = personnelService.findById(Long.parseLong(request.getParameter("pid")), "Personnel");
-			String url = "update&pid=" + request.getParameter("pid");
-			List<Roles> roleList = roleService.listRoles();
-			mav.addObject("roleList", roleList);
-			mav.addObject("personnel",p);
-			mav.addObject("pact", "updateform");
-			mav.addObject("pacts", url);
-		}
+        List<Roles> roleList = roleService.listRoles();
+		mav.addObject("roleList", roleList);
+		mav.addObject("pact", "add");
 		return mav;
 	}
 
@@ -59,17 +46,8 @@ public class ProcessPersonnelController extends SimpleFormController{
 		    ModelAndView mav = new ModelAndView(getFormView());
 		    mav.addAllObjects(errors.getModel());
 		    mav.addObject("roleList", roleService.listRoles());
-		    if("add".equals(request.getParameter("addOrUpdate"))) {
-		    	mav.addObject("pact", "add");
-				mav.addObject("pacts", "add");
-		    } else if ("updateform".equals(request.getParameter("addOrUpdate"))) {
-		    	String url = "update&pid=" + request.getParameter("pid");
-		    	mav.addObject("pact", "updateform");
-				mav.addObject("pacts", url);
-		    }
-		    
+		    mav.addObject("pact", "add");
 		    return mav;
-
 		} else {
 			System.out.println("NO ERRORS FOUND!!!!");
 			return onSubmit(request,response,command,errors);		
@@ -102,11 +80,8 @@ public class ProcessPersonnelController extends SimpleFormController{
                p.getRoles().add(role);
             }
         }
-        if("add".equals(request.getParameter("addOrUpdate"))) {
-        	personnelService.addPersonnel(p);
-        } else if("updateform".equals(request.getParameter("addOrUpdate"))) {
-        	personnelService.updatePersonnel(p);
-        }
+        
+        personnelService.addPersonnel(p);      
         
 		return new ModelAndView("redirect:/listPersonnel");
     }

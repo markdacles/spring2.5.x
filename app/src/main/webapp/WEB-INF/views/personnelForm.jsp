@@ -4,7 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page isELIgnored="false" %>
 
-<html lang="en">
+<html>
     <head>
         <title><spring:message code="label.${pact}"/></title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -13,8 +13,9 @@
     <body>
         <h2 style="display: inline-block;"><spring:message code="label.${pact}"/></h2> 
         <div style="float: right;display: inline-block;"> 
-            <a href="/processPersonnel?action=${pacts}&lang=en">[EN]</a>
-            <a href="/processPersonnel?action=${pacts}&lang=wry">[WRY]</a>
+            <!-- add/update toggle lang -->
+            <a href="/addPersonnel?lang=en">[EN]</a>
+            <a href="/addPersonnel?lang=wry">[WRY]</a>
         </div>
         <hr/>
         <br>
@@ -97,6 +98,7 @@
                     <input type="checkbox" name="checkedRoles" value="${r.roleId}" ${checked}/>${r.role}<br/>
                 </c:forEach>
             <br/>
+            <input type = "hidden" name="addOrUpdate" value="${pact}">
             <input type = "hidden" name="pid" value="${personnel.id}">
             <input type = "submit" value = '<spring:message code="label.submit"/>'>
         </form:form>

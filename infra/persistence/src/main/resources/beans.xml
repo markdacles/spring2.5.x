@@ -85,22 +85,38 @@
 	<bean class = "org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
 	<bean name = "/" class = "IndexController" autowire = "byName" /> 
 	<bean name = "/listPersonnel" class = "PersonnelController" autowire = "byName"/>
-	<bean name = "/addPersonnel" class = "PersonnelController" autowire = "byName"/>
-	<bean name = "/updatePersonnel" class = "PersonnelController" autowire = "byName"/>
 	<bean name = "/deletePersonnel" class = "PersonnelController" autowire = "byName"/>
 	<bean name = "/listRoles" class = "RoleController" autowire = "byName"/>
 	<bean name = "/manageRoles" class = "RoleController" autowire = "byName"/>
-	<bean name = "/processRole" class = "RoleController" autowire = "byName"/>
 	<bean name = "/deleteRole" class = "RoleController" autowire = "byName"/>
-	<bean name = "/processPersonnel" class = "ProcessPersonnelController" autowire = "byName">
+	<bean name = "/addPersonnel" class = "AddPersonnelController" autowire = "byName">
 		<property name="commandName" value="personnel" />
     	<property name="commandClass" value="Personnel" />
     	<property name="formView" value="personnelForm"/>
 		<property name="validator" ref="personnelValidator"/>
 	</bean>
+	<bean name = "/updatePersonnel" class = "UpdatePersonnelController" autowire = "byName">
+		<property name="commandName" value="personnel" />
+    	<property name="commandClass" value="Personnel" />
+    	<property name="formView" value="personnelForm"/>
+		<property name="validator" ref="personnelValidator"/>
+	</bean>
+	<bean name = "/addRole" class = "AddRoleController" autowire = "byName">
+		<property name="commandName" value="roles" />
+    	<property name="commandClass" value="Roles" />
+    	<property name="formView" value="roleIndex"/>
+		<property name="validator" ref="roleValidator"/>
+	</bean>
+
+	<bean name = "/updateRole" class = "UpdateRoleController" autowire = "byName">
+		<property name="commandName" value="roles" />
+    	<property name="commandClass" value="Roles" />
+    	<property name="formView" value="updateRoleForm"/>
+		<property name="validator" ref="roleValidator"/>
+	</bean>
 	
 	<bean id = "personnelValidator" class = "PersonnelValidator" autowire = "byName"/>
-	<!-- <bean id = "roleValidator" class = "RoleValidator" autowire = "byName" /> -->
+	<bean id = "roleValidator" class = "RoleValidator" autowire = "byName" />
 
 	<!-- LOCALE CHANGER -->
 	<bean id = "messageSource" class = "org.springframework.context.support.ResourceBundleMessageSource">

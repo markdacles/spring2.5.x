@@ -1,6 +1,7 @@
 import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
+import org.springframework.web.bind.ServletRequestDataBinder;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
@@ -15,6 +16,10 @@ public class RoleController extends MultiActionController{
 
 	public void setRoleService(RoleService roleService) {
 		this.roleService = roleService;
+	}
+
+	public void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) {
+		binder.setValidator(new RoleValidator());
 	}
 
 	public ModelAndView listRoles (HttpServletRequest request, HttpServletResponse response) {
@@ -32,7 +37,21 @@ public class RoleController extends MultiActionController{
 		return mav;
 	}
 
-	public ModelAndView processRole (HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView processAction(HttpServletRequest request, HttpServletResponse response, Roles roles) throws Exception{
+		//ModelAndView mav = new ModelAndView("roleForm");
+		ServletRequestDataBinder binder = createBinder(request, roles);
+		binder.bind(request);
+
+		if(binder.getBindingResult().hasErrors()) {
+			ModelAndView mav = new ModelAndView("roleForm");
+		    mav.addAllObjects(binder.getBindingResult().getModel());
+		    return mav;
+		} else {
+			return addRole(request,response);
+		}
+	}
+
+	public ModelAndView addRole (HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView("redirect:/listRoles");
 		String[] ornames = request.getParameterValues("oldroles");
 		String[] orid = request.getParameterValues("oldrid");
@@ -63,7 +82,7 @@ public class RoleController extends MultiActionController{
 	}
 
 	public ModelAndView deleteRole (HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mav = new ModelAndView("redirect:/listRoles");
+		ModelAndView mav = new ModelAndView("redirect:/addRole");
 		roleService.deleteRole(Long.parseLong(request.getParameter("roleid")), "Roles");
 		return mav;
 	}

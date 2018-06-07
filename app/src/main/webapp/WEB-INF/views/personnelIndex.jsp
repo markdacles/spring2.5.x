@@ -5,6 +5,7 @@
 <%@ page isELIgnored="false" %>
 
 <html>
+    <div>
     <head>
         <title><spring:message code="label.${pact}"/></title>
     </head>
@@ -15,14 +16,14 @@
             <a href="/listPersonnel?lang=en">[EN]</a>
             <a href="/listPersonnel?lang=wry">[WRY]</a>
         </div>
-         <hr/>
-        <form action="/processPersonnel">
-            <input type = "hidden" name="action" value="add">
+         <hr>
+        <form action="/addPersonnel">
             <button type="submit"><spring:message code="label.addp"/></button>
         </form>
+    </div>
 
-        <div>
-            <table border = "1" width = "100%">
+        <div style="overflow-x:auto;">
+            <table border = "1" style=" white-space: nowrap;">
                 <tr bgcolor = "#D3D3D3">
                     <th>ID</a></th>
                     <th><spring:message code="label.name"/></a></th>
@@ -50,11 +51,11 @@
                             </c:forEach>
                         <td>
                             <c:forEach items = "${p.roles}" var = "r">
-                                ${r.role}</br>
+                                &bull; ${r.role}</br>
                             </c:forEach>
                         </td>
                         <td>
-                            <a href = "/processPersonnel?action=update&pid=<c:out value='${p.id}'/>" ><spring:message code="label.updatep"/></a>
+                            <a href = "/updatePersonnel?pid=<c:out value='${p.id}'/>" ><spring:message code="label.updatep"/></a>
                         </td>
                         <td>
                             <a href = "/deletePersonnel?pid=<c:out value='${p.id}&'/>" ><spring:message code="label.deletep"/></a>
