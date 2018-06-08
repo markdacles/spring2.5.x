@@ -36,6 +36,8 @@ public class AddPersonnelController extends SimpleFormController{
         List<Roles> roleList = roleService.listRoles();
 		mav.addObject("roleList", roleList);
 		mav.addObject("pact", "add");
+		String url = "addPersonnel?";
+		mav.addObject("url", url);
 		return mav;
 	}
 
@@ -59,6 +61,8 @@ public class AddPersonnelController extends SimpleFormController{
     protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object command, BindException errors) {
         
         Personnel p = (Personnel) command;
+
+        System.out.println("Person name:" + p.getName().getFname());
 
 		String[] cType = request.getParameterValues("contactType");
 		String[] cDetails = request.getParameterValues("contactDetails");

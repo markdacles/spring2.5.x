@@ -10,10 +10,6 @@ public interface PersonnelService {
 
  	public void deletePersonnel(Long id, String object);
 
- //    public void showRoles();
-
 	public Personnel findById(Long id, String object);
-
- //    public boolean checkPerson(Long id);
 
 }

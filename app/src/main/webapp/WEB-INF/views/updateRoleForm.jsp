@@ -19,25 +19,22 @@
          <hr/>
         <div>
             <form:form method="POST" commandName="roles">
-            <table border = "1" width = "100%" id="roleTable">
-                <col width="10%">
+            <table border = "1" width = "50%" id="roleTable" align="center">
                 <col width="65%">
                 <col width="15%">
                 <tr bgcolor = "#D3D3D3">
-                    <th size="1">ID</a></th>
                     <th><spring:message code="label.rolename"/></a></th>
                     <th><spring:message code="label.action"/></th>
                 </tr>
                 <tr>
-                    <td align="center">${roleid}</td>
                     <td>
                         <form:input path="role" value = "${r.role}" style="font-size:30;height:50;width:100%;"/>
                         <form:errors class="error" path="role"/>
                     </td>
                     <input type="hidden" value="${r.roleId}" name="roleid"/>
                     <td align="center">
-                            <input style="width:50%;" type="submit" value="<spring:message code='label.save'/>"/>
-                            <a href = "/deleteRole?roleid=<c:out value='${roleid}'/>"> <button type="button"><spring:message code="label.delete"/></button></a>
+                            <input style="width:100%;" type="submit" value="<spring:message code='label.save'/>"/>
+                            <a href = "/deleteRole?roleid=<c:out value='${roleid}'/>"> <button type="button" style="width:100%;"><spring:message code="label.delete"/></button></a>
                         </td>
                 </tr>
             </table>

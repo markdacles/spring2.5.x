@@ -5,8 +5,8 @@ CREATE TABLE project (
     end_date timestamp without time zone
 );
 
-CREATE TABLE personnel_project (
-    id serial REFERENCES personnel(id),
+CREATE TABLE project_personnel (
     project_id serial REFERENCES project(project_id),
-    PRIMARY KEY (id, project_id)
+    id serial REFERENCES personnel(id),
+    PRIMARY KEY (project_id, id)
 );

@@ -14,8 +14,8 @@
         <h2 style="display: inline-block;"><spring:message code="label.${pact}"/></h2> 
         <div style="float: right;display: inline-block;"> 
             <!-- add/update toggle lang -->
-            <a href="/addPersonnel?lang=en">[EN]</a>
-            <a href="/addPersonnel?lang=wry">[WRY]</a>
+            <a href="/${url}lang=en">[EN]</a>
+            <a href="/${url}lang=wry">[WRY]</a>
         </div>
         <hr/>
         <br>
@@ -67,22 +67,22 @@
             <c:forEach items="${personnel.contact}" var="c">
                 <div>
                     <input type="hidden" name="contactType" value="${c.contactType}"/>${c.contactType} : 
-                        <input type="text" name="contactDetails" value="${c.contactDetails}"/><input type='button' id='remove-button' value='-'><br>
+                        <input type="text" name="contactDetails" value="${c.contactDetails}" required/><input type='button' id='remove-button' value='-'><br>
                 </div>
             </c:forEach>
             </div>
 
             <script>
                 $("#addLandline").click(function() {
-                    $("#contactSection").append('<div>' + '<input type="hidden" name="contactType" value="Landline"/>Landline : ' + '<input type="text" name="contactDetails"/>' + "<input type='button' id='remove-button' value='-'><br></div>");
+                    $("#contactSection").append('<div>' + '<input type="hidden" name="contactType" value="Landline"/>Landline : ' + '<input type="text" name="contactDetails" required/>' + "<input type='button' id='remove-button' value='-'><br></div>");
                 });
 
                 $("#addMobile").click(function() {
-                       $("#contactSection").append('<div>' + '<input type="hidden" name="contactType" value="Mobile"/>Mobile : ' + '<input type="text" name="contactDetails"/>' +  "<input type='button' id='remove-button' value='-'><br></div>");
+                       $("#contactSection").append('<div>' + '<input type="hidden" name="contactType" value="Mobile"/>Mobile : ' + '<input type="text" name="contactDetails" required/>' +  "<input type='button' id='remove-button' value='-'><br></div>");
                 });
 
                 $("#addEmail").click(function() {
-                   $("#contactSection").append('<div>' + '<input type="hidden" name="contactType" value="Email"/>Email : ' + '<input type="text" name="contactDetails"/>' +  "<input type='button' id='remove-button' value='-'><br></div>");
+                   $("#contactSection").append('<div>' + '<input type="hidden" name="contactType" value="Email"/>Email : ' + '<input type="text" name="contactDetails" required/>' +  "<input type='button' id='remove-button' value='-'><br></div>");
                 });
 
                 $(document).on('click', '#remove-button', function() {

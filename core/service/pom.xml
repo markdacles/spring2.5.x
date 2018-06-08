@@ -11,11 +11,6 @@
 
   <dependencies>
 
- 	  <dependency>
-          <groupId>com.exist.ecc</groupId>
-          <artifactId>utils</artifactId>
-    </dependency>
-
     <dependency>
           <groupId>com.exist.ecc</groupId>
           <artifactId>dao</artifactId>

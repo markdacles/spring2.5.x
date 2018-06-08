@@ -19,21 +19,18 @@
          <hr/>
         <div>
             <form:form method="POST" commandName="roles">
-            <table border = "1" width = "100%" id="roleTable">
-                <col width="10%">
+            <table border = "1" width = "80%" id="roleTable" align="center">
                 <col width="66%">
                 <col width="12%">
                 <col width="12%">
                 <tr bgcolor = "#D3D3D3">
-                    <th size="1">ID</a></th>
-                    <th><spring:message code="label.rolename"/></a></th>
+                    <th><spring:message code="label.rolename"/></th>
                     <th><spring:message code="label.update"/></th>
                     <th><spring:message code="label.delete"/></th>
                 </tr>
 
                 <c:forEach items = "${rolelist}" var = "r">
                         <tr>
-                                <td align="center">${r.roleId}</td>
                                 <td> ${r.role}
                                 </td>
                                 <td>
@@ -45,15 +42,15 @@
                         </tr>
                 </c:forEach>
                 <tr>
-                        <td align="center">
-                            <input type="submit" value="<spring:message code='label.addbutton'/>"/>
-                        </td>
                         <td>
-                            <form:input path="role" value = "${roles.role}" style="width:100%;"/>
+                            <form:input path="role" style="width:100%;"/>
                             <form:errors class="error" path="role"/><br/>
                         </td>
-                        <td></td>
-                        <td></td>
+                        <td align="center" colspan="2">
+                            <input style="width:100%;" type="submit" value="<spring:message code='label.addbutton'/>"/>
+                        </td>
+                        
+                        
                 <tr>
             </table>
             </form:form>

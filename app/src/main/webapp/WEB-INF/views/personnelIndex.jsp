@@ -4,11 +4,11 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page isELIgnored="false" %>
 
+<!DOCTYPE html>
+
 <html>
     <div>
-    <head>
-        <title><spring:message code="label.${pact}"/></title>
-    </head>
+    <head><title><spring:message code="label.${pact}"/></title></head>
 
     <body>
         <h2 style="display: inline-block;"><spring:message code="label.${pact}"/></h2> 
@@ -17,20 +17,36 @@
             <a href="/listPersonnel?lang=wry">[WRY]</a>
         </div>
          <hr>
-        <form action="/addPersonnel">
-            <button type="submit"><spring:message code="label.addp"/></button>
+        <form style="float:right; display: inline-block;" action="/addPersonnel">
+            <button type="submit" >
+                <spring:message code="label.addp"/>
+            </button>
         </form>
+
+        <form:form method="POST" commandName="uploadFile" enctype="multipart/form-data" style="display: inline-block;">
+            
+            <input type="file" name="multipartFile" id="multipartFile"/>
+            <input type="submit" value="Upload"/><br>
+            <!-- <form:errors path="multipartFile" cssClass="error"/> <br> -->
+<br><br>
+        </form:form>
+
+         <form style="float:right; display: inline-block;" action="/addPersonnelByFile">
+            <input type="file" name="multipartFile" id="multipartFile"/>
+            <input type="submit" value="Upload"/><br>
+        </form>
+
     </div>
 
         <div style="overflow-x:auto;">
-            <table border = "1" style=" white-space: nowrap;">
+            <table border = "1" style="width:100%;white-space: nowrap;">
                 <tr bgcolor = "#D3D3D3">
-                    <th>ID</a></th>
-                    <th><spring:message code="label.name"/></a></th>
-                    <th><spring:message code="label.address"/></a></th>
-                    <th><spring:message code="label.birthday"/></a></th>
-                    <th>GWA</a></th>
-                    <th><spring:message code="label.dateHired"/></a></th>
+                    <th>ID</th>
+                    <th><spring:message code="label.name"/></th>
+                    <th><spring:message code="label.address"/></th>
+                    <th><spring:message code="label.birthday"/></th>
+                    <th>GWA</th>
+                    <th><spring:message code="label.dateHired"/></th>
                     <th><spring:message code="label.contact"/></th>
                     <th><spring:message code="label.roles"/></th>
                     <th><spring:message code="label.update"/></th>
@@ -58,7 +74,7 @@
                             <a href = "/updatePersonnel?pid=<c:out value='${p.id}'/>" ><spring:message code="label.updatep"/></a>
                         </td>
                         <td>
-                            <a href = "/deletePersonnel?pid=<c:out value='${p.id}&'/>" ><spring:message code="label.deletep"/></a>
+                            <a href = "/deletePersonnel?pid=<c:out value='${p.id}'/>" ><spring:message code="label.deletep"/></a>
                         </td>
                     </tr>
                 </c:forEach>

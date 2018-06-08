@@ -43,18 +43,4 @@ public class DaoImpl implements Dao{
       System.out.println("IN DAO");
       return (List<Object>) getCurrentSession().createQuery("from " + object).setCacheable(true).list();
   	}
-
-  	// public List getOrderedList(String object, String order) {
-  	// 	Session session = sessionFactory.openSession();
-  	// 	List results = null;
-  	// 	try {
-  	// 		Criteria criteria = session.createCriteria(object);
-  	// 		criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
-  	// 		criteria.addOrder(Order.asc(order));
-   //      results = criteria.list();
-  	// 	} catch (HibernateException e) {
-  	// 		e.printStackTrace(); 
-  	// 	}
-  	// 	return results;
-  	// }
 }

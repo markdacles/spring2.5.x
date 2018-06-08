@@ -11,17 +11,17 @@ import java.util.HashSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class UpdatePersonnelController extends SimpleFormController{
+public class AddProjectController extends SimpleFormController{
 
+	private ProjectService projectService;
 	private PersonnelService personnelService;
-	private RoleService roleService;
+
+	public void setProjectService(ProjectService projectService) {
+		this.projectService = projectService;
+	}
 
 	public void setPersonnelService(PersonnelService personnelService) {
 		this.personnelService = personnelService;
-	}
-
-	public void setRoleService(RoleService roleService) {
-		this.roleService = roleService;
 	}
 
 	public void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception {
@@ -30,34 +30,25 @@ public class UpdatePersonnelController extends SimpleFormController{
             dateFormat, true));
     }
 
-    protected Object formBackingObject(HttpServletRequest request) throws Exception {
-		return personnelService.findById(Long.parseLong(request.getParameter("pid")), "Personnel");
-	}
-
 	public ModelAndView showForm(HttpServletRequest request, HttpServletResponse response, BindException errors) throws Exception {
 		ModelAndView mav = new ModelAndView(getFormView());
         mav.addAllObjects(errors.getModel());
-		mav.addObject("roleList", roleService.listRoles());
-		Personnel p = personnelService.findById(Long.parseLong(request.getParameter("pid")), "Personnel");
-		List<Roles> roleList = roleService.listRoles();
-		mav.addObject("roleList", roleList);
-		mav.addObject("personnel",p);
-		mav.addObject("pact", "updateform");
-		String url = "updatePersonnel?pid=" + request.getParameter("pid") + "&";
+		mav.addObject("personnelList", personnelService.listPersonnel());
+		mav.addObject("pact", "addj");
+		String url = "addProject?";
 		mav.addObject("url", url);
 		return mav;
 	}
 
 	public ModelAndView processFormSubmission(HttpServletRequest request, HttpServletResponse response, Object command, BindException errors) throws Exception { 
-		Personnel personnel = (Personnel) command;
+		Project project = (Project) command;
 		if(errors.hasErrors()) {
 			System.out.println("ERRORS FOUND!!!!");
 		    ModelAndView mav = new ModelAndView(getFormView());
 		    mav.addAllObjects(errors.getModel());
-		    mav.addObject("roleList", roleService.listRoles());
-	    	mav.addObject("pact", "updateform");
+		    mav.addObject("personnelList", personnelService.listPersonnel());
+		    mav.addObject("pact", "add");
 		    return mav;
-
 		} else {
 			System.out.println("NO ERRORS FOUND!!!!");
 			return onSubmit(request,response,command,errors);		
@@ -68,31 +59,21 @@ public class UpdatePersonnelController extends SimpleFormController{
 	@Override
     protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object command, BindException errors) {
         
-        Personnel p = (Personnel) command;
+        Project project = (Project) command;
 
-		String[] cType = request.getParameterValues("contactType");
-		String[] cDetails = request.getParameterValues("contactDetails");
+        System.out.println("project name:" + project.getProjectName());
 
-		if(cDetails != null){
-			for(int i = 0; i < cDetails.length; i++){
-				Contact c = new Contact();
-				c.setContactType(cType[i]);
-				c.setContactDetails(cDetails[i]);
-				p.getContact().add(c);
+		String[] assigned = request.getParameterValues("lstBox2");
+
+		if(assigned != null){
+			for(String id : assigned){
+				Personnel p = personnelService.findById(Long.parseLong(id), "Personnel");
+				project.getPersonnel().add(p);
 			}
 		}
 
-		String[] cRoles = request.getParameterValues("checkedRoles");
-
-		if (cRoles != null) {
-            for (String id : cRoles) {
-               Roles role = roleService.findById(Long.parseLong(id), "Roles");
-               p.getRoles().add(role);
-            }
-        }
-
-        personnelService.updatePersonnel(p);
+		projectService.addProject(project);  
         
-		return new ModelAndView("redirect:/listPersonnel");
+		return new ModelAndView("redirect:/listProject");
     }
 }

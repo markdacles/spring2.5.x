@@ -61,6 +61,11 @@ public class Personnel {
         inverseJoinColumns = {@JoinColumn(name = "role_id")})
     private Set<Roles> roles  = new HashSet<Roles>();
 
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @ManyToMany(targetEntity = Project.class, fetch = FetchType.LAZY, mappedBy = "personnel")
+    @Cascade(CascadeType.SAVE_UPDATE)
+    private Set<Project> project  = new HashSet<Project>();
+
     public Personnel() { }
     
     public Long getId() { return id; }
@@ -86,4 +91,18 @@ public class Personnel {
 
     public Set<Roles> getRoles() { return roles; }
     public void setRoles(Set rroles) { roles = rroles; }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) return false;
+        if (!(obj instanceof Personnel))
+            return false;
+        if (obj == this)
+            return true;
+        return this.getId() == ((Personnel) obj).getId();
+    }
+
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
