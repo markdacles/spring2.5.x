@@ -11,6 +11,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Collections;
 
 public class AddRoleController extends SimpleFormController{
 
@@ -24,6 +25,9 @@ public class AddRoleController extends SimpleFormController{
 		ModelAndView mav = new ModelAndView(getFormView());
 		List<Roles> rolelist = roleService.listRoles();
 		Collections.sort(rolelist, (Roles a1, Roles a2) -> a1.getRoleId().compareTo(a2.getRoleId()) );
+		if("role".equals(request.getParameter("sortby"))) {
+            Collections.sort(rolelist, (Roles a1, Roles a2) -> a1.getRole().compareTo(a2.getRole()) );
+        }
 		mav.addObject("rolelist", rolelist);
         mav.addAllObjects(errors.getModel());
 		return mav;

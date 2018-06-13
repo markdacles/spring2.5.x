@@ -24,7 +24,7 @@
                 <col width="12%">
                 <col width="12%">
                 <tr bgcolor = "#D3D3D3">
-                    <th><spring:message code="label.rolename"/></th>
+                    <th><a href =  "/addRole?sortby=<c:out value='role'/>"><spring:message code="label.rolename"/></a></th>
                     <th><spring:message code="label.update"/></th>
                     <th><spring:message code="label.delete"/></th>
                 </tr>

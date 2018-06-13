@@ -25,10 +25,10 @@
         <div style="overflow-x:auto;">
             <table border = "1" style="width:100%;white-space: nowrap;">
                 <tr bgcolor = "#D3D3D3">
-                    <th>ID</a></th>
-                    <th><spring:message code="label.pname"/></th>
-                    <th><spring:message code="label.psdate"/></th>
-                    <th><spring:message code="label.pedate"/></th>
+                    <th><a href =  "/listProject?sortby=<c:out value='id'/>">ID</a></th>
+                    <th><a href =  "/listProject?sortby=<c:out value='name'/>"><spring:message code="label.pname"/></a></th>
+                    <th><a href =  "/listProject?sortby=<c:out value='start'/>"><spring:message code="label.psdate"/></a></th>
+                    <th><a href =  "/listProject?sortby=<c:out value='end'/>"><spring:message code="label.pedate"/></a></th>
                     <th><spring:message code="label.personnel"/></th>
                     <th><spring:message code="label.update"/></th>
                     <th><spring:message code="label.delete"/></th>

@@ -49,6 +49,7 @@ public class AddPersonnelController extends SimpleFormController{
 		    mav.addAllObjects(errors.getModel());
 		    mav.addObject("roleList", roleService.listRoles());
 		    mav.addObject("pact", "add");
+		    String url = "addPersonnel?";
 		    return mav;
 		} else {
 			System.out.println("NO ERRORS FOUND!!!!");

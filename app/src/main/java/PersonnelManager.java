@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.springframework.web.multipart.MultipartFile;
+import java.util.Collections;
 
 public class PersonnelManager extends SimpleFormController{
 
@@ -34,6 +35,20 @@ public class PersonnelManager extends SimpleFormController{
 	public ModelAndView showForm(HttpServletRequest request, HttpServletResponse response, BindException errors) throws Exception {
 		ModelAndView mav = new ModelAndView("personnelIndex");
 		List<Personnel> personnelList = personnelService.listPersonnel();
+		if("id".equals(request.getParameter("sortby"))) {
+            Collections.sort(personnelList, (Personnel a1, Personnel a2) -> a1.getId().compareTo(a2.getId()) );
+        } else if("name".equals(request.getParameter("sortby"))) {
+            Collections.sort(personnelList, (Personnel a1, Personnel a2) -> a1.getName().getLname().compareTo(a2.getName().getLname()) );
+        } else if("address".equals(request.getParameter("sortby"))) {
+            Collections.sort(personnelList, (Personnel a1, Personnel a2) -> a1.getAddress().getBrgy().compareTo(a2.getAddress().getBrgy()) );
+        } else if("bday".equals(request.getParameter("sortby"))) {
+            Collections.sort(personnelList, (Personnel a1, Personnel a2) -> a1.getBirthday().compareTo(a2.getBirthday()) );
+        } else if("gwa".equals(request.getParameter("sortby"))) {
+            Collections.sort(personnelList, (Personnel a1, Personnel a2) -> a1.getGwa().compareTo(a2.getGwa()) );
+        } else if("datehired".equals(request.getParameter("sortby"))) {
+            Collections.sort(personnelList, (Personnel a1, Personnel a2) -> a1.getDateHired().compareTo(a2.getDateHired()) );
+        }
+
 		mav.addObject("personnelList", personnelList);
 		mav.addObject("pact", "manp");
 		return mav;
