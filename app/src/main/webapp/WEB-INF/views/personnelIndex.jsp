@@ -17,25 +17,19 @@
             <a href="/listPersonnel?lang=wry">[WRY]</a>
         </div>
          <hr>
-        <form style="float:right; display: inline-block;" action="/addPersonnel">
+        <form style="float:right;" action="/addPersonnel">
             <button type="submit" >
                 <spring:message code="label.addp"/>
             </button>
         </form>
+        
 
-        <form:form method="POST" commandName="uploadFile" enctype="multipart/form-data" style="display: inline-block;">
-            
-            <input type="file" name="multipartFile" id="multipartFile"/>
-            <input type="submit" value="Upload"/><br>
-            <!-- <form:errors path="multipartFile" cssClass="error"/> <br> -->
-<br><br>
-        </form:form>
-
-         <form style="float:right; display: inline-block;" action="/addPersonnelByFile">
-            <input type="file" name="multipartFile" id="multipartFile"/>
-            <input type="submit" value="Upload"/><br>
+        <form method="POST"  commandName="uploadFile" enctype="multipart/form-data">
+            <input type="file" name="file"/>
+            <button type="submit" name="submit">Upload</button>${fileerror}
         </form>
 
+        <br>
     </div>
 
         <div style="overflow-x:auto;">

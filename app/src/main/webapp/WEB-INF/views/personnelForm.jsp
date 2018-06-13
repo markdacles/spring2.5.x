@@ -103,7 +103,7 @@
             <input type = "submit" value = '<spring:message code="label.submit"/>'>
         </form:form>
         <br>
-         <form action="/listPersonnel">
+         <form action="/personnelManager">
             <button type="submit"><spring:message code="label.back"/></button>
         </form>
     </body>

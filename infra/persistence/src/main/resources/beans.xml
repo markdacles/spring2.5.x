@@ -131,6 +131,11 @@
     	<property name="formView" value="projectForm"/>
 		<property name="validator" ref="projectValidator"/>
 	</bean>
+
+	<bean name = "/personnelManager" class = "PersonnelManager" autowire = "byName">
+		<property name="commandName" value="fileUpload" />
+    	<property name="commandClass" value="FileUpload" />
+    </bean>
 	
 	<bean id = "personnelValidator" class = "PersonnelValidator" autowire = "byName"/>
 	<bean id = "roleValidator" class = "RoleValidator" autowire = "byName" />
@@ -151,14 +156,6 @@
 		<property name = "defaultLocale" value = "en"/>
 	</bean>
 
-	<!-- file upload -->
-	<bean name = "fileUpload" class = "FileUploadController" autowire = "byName">
-		<property name="commandName" value="fileUpload" />
-    	<property name="commandClass" value="FileUpload" />
-    	<property name="formView" value="personnelIndex"/>
-		<!-- <property name="validator" ref="fileUploadValidator"/> -->
-	</bean>
-
-	<bean id = "multipartResolver" class = "org.springframework.web.multipart.commons.CommonsMultipartResolver" autowire = "byName"/>
+	<bean id = "multipartResolver" class = "org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
 
 </beans>

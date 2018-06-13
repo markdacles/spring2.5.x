@@ -90,7 +90,10 @@ public class Personnel {
     public void setContact(Set<Contact> contact) { this.contact = contact; }
 
     public Set<Roles> getRoles() { return roles; }
-    public void setRoles(Set rroles) { roles = rroles; }
+    public void setRoles(Set<Roles> rroles) { roles = rroles; }
+
+    public Set<Project> getProject() { return project; }
+    public void setProject(Set<Project> project) { this.project = project; }
 
     @Override
     public boolean equals(Object obj) {

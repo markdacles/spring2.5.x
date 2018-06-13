@@ -34,25 +34,8 @@ public class PersonnelController extends MultiActionController{
 	}
 
 	public ModelAndView deletePersonnel (HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mav = new ModelAndView("redirect:/listPersonnel");
+		ModelAndView mav = new ModelAndView("redirect:/personnelManager");
 		personnelService.deletePersonnel(Long.parseLong(request.getParameter("pid")), "Personnel");
-		return mav;
-	}
-
-	public ModelAndView addPersonnelByFile(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		ModelAndView mav = new ModelAndView("redirect:/listPersonnel");
-
-		System.out.println(request.getParameter("multipartFile"));
-		FileUpload f = (FileUpload) request.getAttribute("multipartFile");
-        MultipartFile file = f.getMultipartFile();
-
-        FileParser parser = new FileParser();
-		
-		if(file != null){
-			Personnel p = parser.parsePersonnel(file);
-			personnelService.addPersonnel(p);
-		}
-		
 		return mav;
 	}
 
