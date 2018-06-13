@@ -51,7 +51,7 @@
 		<property name = "driverClassName" value = "org.postgresql.Driver"/>
 		<property name = "url" value = "jdbc:postgresql://localhost:5432/personneldb"/>
 		<property name = "username" value = "postgres"/>
-		<property name = "password" value = "ex1stgl0bal"/>
+		<property name = "password" value = "ex!stgl0bal"/>
 	</bean>
 
 	<bean id = "sessionFactory" class = "org.springframework.orm.hibernate4.LocalSessionFactoryBean">

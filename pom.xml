@@ -24,12 +24,6 @@
     <dependencies>
 
       <dependency>
-          <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-simple</artifactId>
-          <version>1.8.0-beta2</version>
-      </dependency>
-
-      <dependency>
           <groupId>org.postgresql</groupId>
           <artifactId>postgresql</artifactId>
           <version>9.4.1212</version>
@@ -106,6 +100,12 @@
           <groupId>org.springframework</groupId>
           <artifactId>spring-core</artifactId>
           <version>${springframework.version}</version>
+          <exclusions>
+            <exclusion>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            </exclusion>
+          </exclusions>
       </dependency>
 
       <dependency>
@@ -151,21 +151,15 @@
       </dependency>
 
       <dependency>
-          <groupId>log4j</groupId>
-          <artifactId>apache-log4j-extras</artifactId>
-          <version>1.2.17</version>
-      </dependency>
-
-      <dependency>
-          <groupId>ch.qos.logback</groupId>
-          <artifactId>logback-core</artifactId>
-          <version>1.2.3</version>
-      </dependency>
-
-      <dependency>
           <groupId>ch.qos.logback</groupId>
           <artifactId>logback-classic</artifactId>
           <version>1.2.3</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>jcl-over-slf4j</artifactId>
+        <version>1.7.12</version>
       </dependency>
 
     </dependencies>
