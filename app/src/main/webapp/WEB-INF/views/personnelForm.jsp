@@ -13,7 +13,6 @@
     <body>
         <h2 style="display: inline-block;"><spring:message code="label.${pact}"/></h2> 
         <div style="float: right;display: inline-block;"> 
-            <!-- add/update toggle lang -->
             <a href="/${url}lang=en">[EN]</a>
             <a href="/${url}lang=wry">[WRY]</a>
         </div>
