@@ -13,8 +13,8 @@
     <body>
         <h2 style="display: inline-block;"><spring:message code="label.${pact}"/></h2> 
         <div style="float: right;display: inline-block;"> 
-            <a href="/listPersonnel?lang=en">[EN]</a>
-            <a href="/listPersonnel?lang=wry">[WRY]</a>
+            <a href="/personnelManager?lang=en">[EN]</a>
+            <a href="/personnelManager?lang=wry">[WRY]</a>
         </div>
          <hr>
         <form style="float:right;" action="/addPersonnel">
@@ -25,11 +25,19 @@
         
 
         <form method="POST"  commandName="uploadFile" enctype="multipart/form-data">
-            <input type="file" name="file"/>
+            Upload Personnel From File: <input type="file" name="file"/>
             <button type="submit" name="submit">Upload</button>${fileerror}
         </form>
 
         <br>
+
+        <form action="/personnelManager">
+            <input type="text" name="nameFilter" placeholder="Search by name" value="${param.nameFilter}"/>
+            <input type="submit" value="Search">
+        </form>
+
+    </br>
+
     </div>
 
         <div style="overflow-x:auto;">

@@ -12,4 +12,5 @@ public interface PersonnelService {
 
 	public Personnel findById(Long id, String object);
 
+	public List<Personnel> searchFor(String str);
 }

@@ -12,5 +12,5 @@ public interface Dao {
 
     public List getList(String object);
 
-    // public List getOrderedList(String object, String order);  
+   	public List<Personnel> searchFor(String str);  
 }

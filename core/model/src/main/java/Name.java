@@ -35,4 +35,8 @@ public class Name {
     public String getTitle() { return title; }
     public void setTitle(String t) { title = t; }    
 
+    public String getFullName() {
+        return (lname + " " + fname + " " + mname);
+    }
+
 }

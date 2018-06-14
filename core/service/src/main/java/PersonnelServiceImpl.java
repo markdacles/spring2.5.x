@@ -8,10 +8,17 @@ import org.slf4j.LoggerFactory;
 public class PersonnelServiceImpl implements PersonnelService {
 
     private Dao dao;
+
+    private PersonnelDao personnelDao;
+
     private static Logger logger = LoggerFactory.getLogger(PersonnelServiceImpl.class);
 
     public void setDao(Dao dao){
       this.dao = dao;
+    }
+
+    public void setPersonnelDao(PersonnelDaoImpl personnelDao){
+      this.personnelDao = personnelDao;
     }
 
     public Personnel findById(Long id, String object) {
@@ -37,5 +44,11 @@ public class PersonnelServiceImpl implements PersonnelService {
     public List<Personnel> listPersonnel() {
         logger.info("PersonnelService listPersonnel method");
     	return dao.getList("Personnel");
+    }
+
+    public List<Personnel> searchFor(String str) {
+        System.out.println("HERE");
+        logger.info("PersonnelService searchFor method");
+        return dao.searchFor(str);
     }
 }

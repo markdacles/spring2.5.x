@@ -35,6 +35,13 @@ public class PersonnelManager extends SimpleFormController{
 	public ModelAndView showForm(HttpServletRequest request, HttpServletResponse response, BindException errors) throws Exception {
 		ModelAndView mav = new ModelAndView("personnelIndex");
 		List<Personnel> personnelList = personnelService.listPersonnel();
+
+		String nameFilter = request.getParameter("nameFilter");
+
+		if(nameFilter != null) {
+			personnelList = personnelService.searchFor(nameFilter);
+		}
+
 		if("id".equals(request.getParameter("sortby"))) {
             Collections.sort(personnelList, (Personnel a1, Personnel a2) -> a1.getId().compareTo(a2.getId()) );
         } else if("name".equals(request.getParameter("sortby"))) {

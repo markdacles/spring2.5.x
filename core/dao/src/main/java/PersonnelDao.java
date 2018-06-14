@@ -11,5 +11,4 @@ public interface PersonnelDao {
   public void contactUpdate(Personnel p);
 
   public void removeContact(Personnel p);
-
 }

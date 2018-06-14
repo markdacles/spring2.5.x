@@ -1470,3 +1470,388 @@ org.springframework.context.NoSuchMessageException: No message found under code 
 2018-06-14 07:13:22 [qtp1152029154-18] [WARN] o.s.web.servlet.PageNotFound - No mapping found for HTTP request with URI [/lang=en] in DispatcherServlet with name 'mvc' 
 2018-06-14 07:14:51 [Thread-2] [INFO] o.s.w.c.s.XmlWebApplicationContext - Closing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 07:11:17 PHT 2018]; root of context hierarchy 
 2018-06-14 07:14:51 [Thread-2] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4f8900b0: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 07:20:05 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization started 
+2018-06-14 07:20:05 [main] [INFO] o.s.w.c.s.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 07:20:05 PHT 2018]; root of context hierarchy 
+2018-06-14 07:20:06 [main] [INFO] o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml] 
+2018-06-14 07:20:07 [main] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4e2cdc51: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 07:20:07 [main] [INFO] o.s.j.d.DriverManagerDataSource - Loaded JDBC driver: org.postgresql.Driver 
+2018-06-14 07:20:07 [main] [INFO] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final} 
+2018-06-14 07:20:07 [main] [INFO] org.hibernate.Version - HHH000412: Hibernate Core {4.2.7.Final} 
+2018-06-14 07:20:07 [main] [INFO] org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found 
+2018-06-14 07:20:07 [main] [INFO] org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist 
+2018-06-14 07:20:08 [main] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2018-06-14 07:20:08 [main] [INFO] o.h.e.j.internal.LobCreatorBuilder - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+2018-06-14 07:20:08 [main] [INFO] o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions) 
+2018-06-14 07:20:08 [main] [INFO] o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory 
+2018-06-14 07:20:08 [main] [INFO] o.h.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache 
+2018-06-14 07:20:08 [main] [INFO] o.h.c.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache 
+2018-06-14 07:20:09 [main] [INFO] o.s.o.h.HibernateTransactionManager - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@7a8b7e11] of Hibernate SessionFactory for HibernateTransactionManager 
+2018-06-14 07:20:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Root mapping to handler '/' 
+2018-06-14 07:20:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listPersonnel] onto handler '/listPersonnel' 
+2018-06-14 07:20:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deletePersonnel] onto handler '/deletePersonnel' 
+2018-06-14 07:20:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnelByFile] onto handler '/addPersonnelByFile' 
+2018-06-14 07:20:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listRoles] onto handler '/listRoles' 
+2018-06-14 07:20:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/manageRoles] onto handler '/manageRoles' 
+2018-06-14 07:20:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteRole] onto handler '/deleteRole' 
+2018-06-14 07:20:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnel] onto handler '/addPersonnel' 
+2018-06-14 07:20:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updatePersonnel] onto handler '/updatePersonnel' 
+2018-06-14 07:20:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addRole] onto handler '/addRole' 
+2018-06-14 07:20:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateRole] onto handler '/updateRole' 
+2018-06-14 07:20:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listProject] onto handler '/listProject' 
+2018-06-14 07:20:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteProject] onto handler '/deleteProject' 
+2018-06-14 07:20:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addProject] onto handler '/addProject' 
+2018-06-14 07:20:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateProject] onto handler '/updateProject' 
+2018-06-14 07:20:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/personnelManager] onto handler '/personnelManager' 
+2018-06-14 07:20:10 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization completed in 4491 ms 
+2018-06-14 08:05:25 [Thread-2] [INFO] o.s.w.c.s.XmlWebApplicationContext - Closing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 07:20:05 PHT 2018]; root of context hierarchy 
+2018-06-14 08:05:25 [Thread-2] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4e2cdc51: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:08:48 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization started 
+2018-06-14 08:08:48 [main] [INFO] o.s.w.c.s.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:08:48 PHT 2018]; root of context hierarchy 
+2018-06-14 08:08:48 [main] [INFO] o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml] 
+2018-06-14 08:08:50 [main] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4aeaff64: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:08:50 [main] [INFO] o.s.j.d.DriverManagerDataSource - Loaded JDBC driver: org.postgresql.Driver 
+2018-06-14 08:08:51 [main] [INFO] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final} 
+2018-06-14 08:08:51 [main] [INFO] org.hibernate.Version - HHH000412: Hibernate Core {4.2.7.Final} 
+2018-06-14 08:08:51 [main] [INFO] org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found 
+2018-06-14 08:08:51 [main] [INFO] org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist 
+2018-06-14 08:08:52 [main] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2018-06-14 08:08:52 [main] [INFO] o.h.e.j.internal.LobCreatorBuilder - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+2018-06-14 08:08:52 [main] [INFO] o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions) 
+2018-06-14 08:08:52 [main] [INFO] o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory 
+2018-06-14 08:08:53 [main] [INFO] o.h.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache 
+2018-06-14 08:08:53 [main] [INFO] o.h.c.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache 
+2018-06-14 08:08:54 [main] [INFO] o.s.o.h.HibernateTransactionManager - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@2212e291] of Hibernate SessionFactory for HibernateTransactionManager 
+2018-06-14 08:08:54 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Root mapping to handler '/' 
+2018-06-14 08:08:54 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listPersonnel] onto handler '/listPersonnel' 
+2018-06-14 08:08:54 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deletePersonnel] onto handler '/deletePersonnel' 
+2018-06-14 08:08:54 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnelByFile] onto handler '/addPersonnelByFile' 
+2018-06-14 08:08:54 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listRoles] onto handler '/listRoles' 
+2018-06-14 08:08:54 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/manageRoles] onto handler '/manageRoles' 
+2018-06-14 08:08:54 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteRole] onto handler '/deleteRole' 
+2018-06-14 08:08:54 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnel] onto handler '/addPersonnel' 
+2018-06-14 08:08:54 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updatePersonnel] onto handler '/updatePersonnel' 
+2018-06-14 08:08:55 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addRole] onto handler '/addRole' 
+2018-06-14 08:08:55 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateRole] onto handler '/updateRole' 
+2018-06-14 08:08:55 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listProject] onto handler '/listProject' 
+2018-06-14 08:08:55 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteProject] onto handler '/deleteProject' 
+2018-06-14 08:08:55 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addProject] onto handler '/addProject' 
+2018-06-14 08:08:55 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateProject] onto handler '/updateProject' 
+2018-06-14 08:08:55 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/personnelManager] onto handler '/personnelManager' 
+2018-06-14 08:08:56 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization completed in 8071 ms 
+2018-06-14 08:12:31 [Thread-2] [INFO] o.s.w.c.s.XmlWebApplicationContext - Closing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:08:48 PHT 2018]; root of context hierarchy 
+2018-06-14 08:12:31 [Thread-2] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4aeaff64: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:12:42 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization started 
+2018-06-14 08:12:42 [main] [INFO] o.s.w.c.s.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:12:42 PHT 2018]; root of context hierarchy 
+2018-06-14 08:12:42 [main] [INFO] o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml] 
+2018-06-14 08:12:43 [main] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4fecf308: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:12:44 [main] [INFO] o.s.j.d.DriverManagerDataSource - Loaded JDBC driver: org.postgresql.Driver 
+2018-06-14 08:12:44 [main] [INFO] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final} 
+2018-06-14 08:12:44 [main] [INFO] org.hibernate.Version - HHH000412: Hibernate Core {4.2.7.Final} 
+2018-06-14 08:12:44 [main] [INFO] org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found 
+2018-06-14 08:12:44 [main] [INFO] org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist 
+2018-06-14 08:12:45 [main] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2018-06-14 08:12:45 [main] [INFO] o.h.e.j.internal.LobCreatorBuilder - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+2018-06-14 08:12:46 [main] [INFO] o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions) 
+2018-06-14 08:12:46 [main] [INFO] o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory 
+2018-06-14 08:12:46 [main] [INFO] o.h.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache 
+2018-06-14 08:12:46 [main] [INFO] o.h.c.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache 
+2018-06-14 08:12:47 [main] [INFO] o.s.o.h.HibernateTransactionManager - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@370a8b6e] of Hibernate SessionFactory for HibernateTransactionManager 
+2018-06-14 08:12:48 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Root mapping to handler '/' 
+2018-06-14 08:12:48 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listPersonnel] onto handler '/listPersonnel' 
+2018-06-14 08:12:48 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deletePersonnel] onto handler '/deletePersonnel' 
+2018-06-14 08:12:48 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnelByFile] onto handler '/addPersonnelByFile' 
+2018-06-14 08:12:48 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listRoles] onto handler '/listRoles' 
+2018-06-14 08:12:48 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/manageRoles] onto handler '/manageRoles' 
+2018-06-14 08:12:48 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteRole] onto handler '/deleteRole' 
+2018-06-14 08:12:48 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnel] onto handler '/addPersonnel' 
+2018-06-14 08:12:48 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updatePersonnel] onto handler '/updatePersonnel' 
+2018-06-14 08:12:48 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addRole] onto handler '/addRole' 
+2018-06-14 08:12:48 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateRole] onto handler '/updateRole' 
+2018-06-14 08:12:48 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listProject] onto handler '/listProject' 
+2018-06-14 08:12:48 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteProject] onto handler '/deleteProject' 
+2018-06-14 08:12:48 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addProject] onto handler '/addProject' 
+2018-06-14 08:12:48 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateProject] onto handler '/updateProject' 
+2018-06-14 08:12:48 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/personnelManager] onto handler '/personnelManager' 
+2018-06-14 08:12:49 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization completed in 7212 ms 
+2018-06-14 08:19:57 [Thread-2] [INFO] o.s.w.c.s.XmlWebApplicationContext - Closing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:12:42 PHT 2018]; root of context hierarchy 
+2018-06-14 08:19:57 [Thread-2] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4fecf308: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:20:09 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization started 
+2018-06-14 08:20:09 [main] [INFO] o.s.w.c.s.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:20:09 PHT 2018]; root of context hierarchy 
+2018-06-14 08:20:09 [main] [INFO] o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml] 
+2018-06-14 08:20:10 [main] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4fea5ee0: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:20:10 [main] [INFO] o.s.j.d.DriverManagerDataSource - Loaded JDBC driver: org.postgresql.Driver 
+2018-06-14 08:20:11 [main] [INFO] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final} 
+2018-06-14 08:20:11 [main] [INFO] org.hibernate.Version - HHH000412: Hibernate Core {4.2.7.Final} 
+2018-06-14 08:20:11 [main] [INFO] org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found 
+2018-06-14 08:20:11 [main] [INFO] org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist 
+2018-06-14 08:20:11 [main] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2018-06-14 08:20:11 [main] [INFO] o.h.e.j.internal.LobCreatorBuilder - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+2018-06-14 08:20:12 [main] [INFO] o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions) 
+2018-06-14 08:20:12 [main] [INFO] o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory 
+2018-06-14 08:20:12 [main] [INFO] o.h.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache 
+2018-06-14 08:20:12 [main] [INFO] o.h.c.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache 
+2018-06-14 08:20:13 [main] [INFO] o.s.o.h.HibernateTransactionManager - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@767b9d66] of Hibernate SessionFactory for HibernateTransactionManager 
+2018-06-14 08:20:13 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Root mapping to handler '/' 
+2018-06-14 08:20:13 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listPersonnel] onto handler '/listPersonnel' 
+2018-06-14 08:20:13 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deletePersonnel] onto handler '/deletePersonnel' 
+2018-06-14 08:20:13 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnelByFile] onto handler '/addPersonnelByFile' 
+2018-06-14 08:20:13 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listRoles] onto handler '/listRoles' 
+2018-06-14 08:20:13 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/manageRoles] onto handler '/manageRoles' 
+2018-06-14 08:20:13 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteRole] onto handler '/deleteRole' 
+2018-06-14 08:20:13 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnel] onto handler '/addPersonnel' 
+2018-06-14 08:20:13 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updatePersonnel] onto handler '/updatePersonnel' 
+2018-06-14 08:20:14 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addRole] onto handler '/addRole' 
+2018-06-14 08:20:14 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateRole] onto handler '/updateRole' 
+2018-06-14 08:20:14 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listProject] onto handler '/listProject' 
+2018-06-14 08:20:14 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteProject] onto handler '/deleteProject' 
+2018-06-14 08:20:14 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addProject] onto handler '/addProject' 
+2018-06-14 08:20:14 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateProject] onto handler '/updateProject' 
+2018-06-14 08:20:14 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/personnelManager] onto handler '/personnelManager' 
+2018-06-14 08:20:15 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization completed in 5540 ms 
+2018-06-14 08:24:49 [Thread-2] [INFO] o.s.w.c.s.XmlWebApplicationContext - Closing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:20:09 PHT 2018]; root of context hierarchy 
+2018-06-14 08:24:49 [Thread-2] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4fea5ee0: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:25:05 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization started 
+2018-06-14 08:25:05 [main] [INFO] o.s.w.c.s.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:25:05 PHT 2018]; root of context hierarchy 
+2018-06-14 08:25:05 [main] [INFO] o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml] 
+2018-06-14 08:25:08 [main] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@35bfa1bb: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:25:08 [main] [INFO] o.s.j.d.DriverManagerDataSource - Loaded JDBC driver: org.postgresql.Driver 
+2018-06-14 08:25:09 [main] [INFO] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final} 
+2018-06-14 08:25:09 [main] [INFO] org.hibernate.Version - HHH000412: Hibernate Core {4.2.7.Final} 
+2018-06-14 08:25:09 [main] [INFO] org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found 
+2018-06-14 08:25:09 [main] [INFO] org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist 
+2018-06-14 08:25:11 [main] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2018-06-14 08:25:11 [main] [INFO] o.h.e.j.internal.LobCreatorBuilder - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+2018-06-14 08:25:12 [main] [INFO] o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions) 
+2018-06-14 08:25:12 [main] [INFO] o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory 
+2018-06-14 08:25:13 [main] [INFO] o.h.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache 
+2018-06-14 08:25:13 [main] [INFO] o.h.c.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache 
+2018-06-14 08:25:14 [main] [INFO] o.s.o.h.HibernateTransactionManager - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@7e81617a] of Hibernate SessionFactory for HibernateTransactionManager 
+2018-06-14 08:25:15 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Root mapping to handler '/' 
+2018-06-14 08:25:15 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listPersonnel] onto handler '/listPersonnel' 
+2018-06-14 08:25:15 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deletePersonnel] onto handler '/deletePersonnel' 
+2018-06-14 08:25:15 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnelByFile] onto handler '/addPersonnelByFile' 
+2018-06-14 08:25:15 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listRoles] onto handler '/listRoles' 
+2018-06-14 08:25:15 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/manageRoles] onto handler '/manageRoles' 
+2018-06-14 08:25:15 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteRole] onto handler '/deleteRole' 
+2018-06-14 08:25:15 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnel] onto handler '/addPersonnel' 
+2018-06-14 08:25:15 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updatePersonnel] onto handler '/updatePersonnel' 
+2018-06-14 08:25:16 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addRole] onto handler '/addRole' 
+2018-06-14 08:25:16 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateRole] onto handler '/updateRole' 
+2018-06-14 08:25:16 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listProject] onto handler '/listProject' 
+2018-06-14 08:25:16 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteProject] onto handler '/deleteProject' 
+2018-06-14 08:25:16 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addProject] onto handler '/addProject' 
+2018-06-14 08:25:16 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateProject] onto handler '/updateProject' 
+2018-06-14 08:25:16 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/personnelManager] onto handler '/personnelManager' 
+2018-06-14 08:25:18 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization completed in 13037 ms 
+2018-06-14 08:28:31 [Thread-2] [INFO] o.s.w.c.s.XmlWebApplicationContext - Closing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:25:05 PHT 2018]; root of context hierarchy 
+2018-06-14 08:28:31 [Thread-2] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@35bfa1bb: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:28:41 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization started 
+2018-06-14 08:28:41 [main] [INFO] o.s.w.c.s.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:28:41 PHT 2018]; root of context hierarchy 
+2018-06-14 08:28:41 [main] [INFO] o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml] 
+2018-06-14 08:28:42 [main] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@38a4e2b0: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:28:42 [main] [INFO] o.s.j.d.DriverManagerDataSource - Loaded JDBC driver: org.postgresql.Driver 
+2018-06-14 08:28:43 [main] [INFO] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final} 
+2018-06-14 08:28:43 [main] [INFO] org.hibernate.Version - HHH000412: Hibernate Core {4.2.7.Final} 
+2018-06-14 08:28:43 [main] [INFO] org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found 
+2018-06-14 08:28:43 [main] [INFO] org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist 
+2018-06-14 08:28:44 [main] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2018-06-14 08:28:44 [main] [INFO] o.h.e.j.internal.LobCreatorBuilder - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+2018-06-14 08:28:45 [main] [INFO] o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions) 
+2018-06-14 08:28:45 [main] [INFO] o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory 
+2018-06-14 08:28:45 [main] [INFO] o.h.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache 
+2018-06-14 08:28:45 [main] [INFO] o.h.c.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache 
+2018-06-14 08:28:46 [main] [INFO] o.s.o.h.HibernateTransactionManager - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@4e8d9bb6] of Hibernate SessionFactory for HibernateTransactionManager 
+2018-06-14 08:28:47 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Root mapping to handler '/' 
+2018-06-14 08:28:47 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listPersonnel] onto handler '/listPersonnel' 
+2018-06-14 08:28:47 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deletePersonnel] onto handler '/deletePersonnel' 
+2018-06-14 08:28:47 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnelByFile] onto handler '/addPersonnelByFile' 
+2018-06-14 08:28:47 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listRoles] onto handler '/listRoles' 
+2018-06-14 08:28:47 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/manageRoles] onto handler '/manageRoles' 
+2018-06-14 08:28:47 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteRole] onto handler '/deleteRole' 
+2018-06-14 08:28:47 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnel] onto handler '/addPersonnel' 
+2018-06-14 08:28:47 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updatePersonnel] onto handler '/updatePersonnel' 
+2018-06-14 08:28:47 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addRole] onto handler '/addRole' 
+2018-06-14 08:28:47 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateRole] onto handler '/updateRole' 
+2018-06-14 08:28:47 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listProject] onto handler '/listProject' 
+2018-06-14 08:28:47 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteProject] onto handler '/deleteProject' 
+2018-06-14 08:28:47 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addProject] onto handler '/addProject' 
+2018-06-14 08:28:47 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateProject] onto handler '/updateProject' 
+2018-06-14 08:28:47 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/personnelManager] onto handler '/personnelManager' 
+2018-06-14 08:28:48 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization completed in 6687 ms 
+2018-06-14 08:46:45 [Thread-2] [INFO] o.s.w.c.s.XmlWebApplicationContext - Closing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:28:41 PHT 2018]; root of context hierarchy 
+2018-06-14 08:46:45 [Thread-2] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@38a4e2b0: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:47:02 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization started 
+2018-06-14 08:47:02 [main] [INFO] o.s.w.c.s.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:47:02 PHT 2018]; root of context hierarchy 
+2018-06-14 08:47:02 [main] [INFO] o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml] 
+2018-06-14 08:47:03 [main] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2dba05b1: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:47:04 [main] [INFO] o.s.j.d.DriverManagerDataSource - Loaded JDBC driver: org.postgresql.Driver 
+2018-06-14 08:47:04 [main] [INFO] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final} 
+2018-06-14 08:47:04 [main] [INFO] org.hibernate.Version - HHH000412: Hibernate Core {4.2.7.Final} 
+2018-06-14 08:47:04 [main] [INFO] org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found 
+2018-06-14 08:47:04 [main] [INFO] org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist 
+2018-06-14 08:47:05 [main] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2018-06-14 08:47:05 [main] [INFO] o.h.e.j.internal.LobCreatorBuilder - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+2018-06-14 08:47:06 [main] [INFO] o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions) 
+2018-06-14 08:47:06 [main] [INFO] o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory 
+2018-06-14 08:47:06 [main] [INFO] o.h.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache 
+2018-06-14 08:47:06 [main] [INFO] o.h.c.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache 
+2018-06-14 08:47:07 [main] [INFO] o.s.o.h.HibernateTransactionManager - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@16a09809] of Hibernate SessionFactory for HibernateTransactionManager 
+2018-06-14 08:47:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Root mapping to handler '/' 
+2018-06-14 08:47:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listPersonnel] onto handler '/listPersonnel' 
+2018-06-14 08:47:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deletePersonnel] onto handler '/deletePersonnel' 
+2018-06-14 08:47:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnelByFile] onto handler '/addPersonnelByFile' 
+2018-06-14 08:47:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listRoles] onto handler '/listRoles' 
+2018-06-14 08:47:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/manageRoles] onto handler '/manageRoles' 
+2018-06-14 08:47:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteRole] onto handler '/deleteRole' 
+2018-06-14 08:47:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnel] onto handler '/addPersonnel' 
+2018-06-14 08:47:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updatePersonnel] onto handler '/updatePersonnel' 
+2018-06-14 08:47:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addRole] onto handler '/addRole' 
+2018-06-14 08:47:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateRole] onto handler '/updateRole' 
+2018-06-14 08:47:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listProject] onto handler '/listProject' 
+2018-06-14 08:47:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteProject] onto handler '/deleteProject' 
+2018-06-14 08:47:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addProject] onto handler '/addProject' 
+2018-06-14 08:47:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateProject] onto handler '/updateProject' 
+2018-06-14 08:47:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/personnelManager] onto handler '/personnelManager' 
+2018-06-14 08:47:09 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization completed in 7846 ms 
+2018-06-14 08:47:35 [Thread-2] [INFO] o.s.w.c.s.XmlWebApplicationContext - Closing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:47:02 PHT 2018]; root of context hierarchy 
+2018-06-14 08:47:35 [Thread-2] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2dba05b1: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:47:50 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization started 
+2018-06-14 08:47:50 [main] [INFO] o.s.w.c.s.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:47:50 PHT 2018]; root of context hierarchy 
+2018-06-14 08:47:50 [main] [INFO] o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml] 
+2018-06-14 08:47:52 [main] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5034f5dd: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:47:52 [main] [INFO] o.s.j.d.DriverManagerDataSource - Loaded JDBC driver: org.postgresql.Driver 
+2018-06-14 08:47:53 [main] [INFO] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final} 
+2018-06-14 08:47:53 [main] [INFO] org.hibernate.Version - HHH000412: Hibernate Core {4.2.7.Final} 
+2018-06-14 08:47:53 [main] [INFO] org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found 
+2018-06-14 08:47:53 [main] [INFO] org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist 
+2018-06-14 08:47:54 [main] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2018-06-14 08:47:54 [main] [INFO] o.h.e.j.internal.LobCreatorBuilder - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+2018-06-14 08:47:55 [main] [INFO] o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions) 
+2018-06-14 08:47:55 [main] [INFO] o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory 
+2018-06-14 08:47:55 [main] [INFO] o.h.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache 
+2018-06-14 08:47:55 [main] [INFO] o.h.c.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache 
+2018-06-14 08:47:56 [main] [INFO] o.s.o.h.HibernateTransactionManager - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@2e362407] of Hibernate SessionFactory for HibernateTransactionManager 
+2018-06-14 08:47:57 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Root mapping to handler '/' 
+2018-06-14 08:47:57 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listPersonnel] onto handler '/listPersonnel' 
+2018-06-14 08:47:57 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deletePersonnel] onto handler '/deletePersonnel' 
+2018-06-14 08:47:57 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnelByFile] onto handler '/addPersonnelByFile' 
+2018-06-14 08:47:57 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listRoles] onto handler '/listRoles' 
+2018-06-14 08:47:57 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/manageRoles] onto handler '/manageRoles' 
+2018-06-14 08:47:57 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteRole] onto handler '/deleteRole' 
+2018-06-14 08:47:57 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnel] onto handler '/addPersonnel' 
+2018-06-14 08:47:57 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updatePersonnel] onto handler '/updatePersonnel' 
+2018-06-14 08:47:57 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addRole] onto handler '/addRole' 
+2018-06-14 08:47:57 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateRole] onto handler '/updateRole' 
+2018-06-14 08:47:57 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listProject] onto handler '/listProject' 
+2018-06-14 08:47:57 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteProject] onto handler '/deleteProject' 
+2018-06-14 08:47:58 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addProject] onto handler '/addProject' 
+2018-06-14 08:47:58 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateProject] onto handler '/updateProject' 
+2018-06-14 08:47:58 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/personnelManager] onto handler '/personnelManager' 
+2018-06-14 08:47:58 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization completed in 8753 ms 
+2018-06-14 08:48:45 [Thread-2] [INFO] o.s.w.c.s.XmlWebApplicationContext - Closing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:47:50 PHT 2018]; root of context hierarchy 
+2018-06-14 08:48:45 [Thread-2] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5034f5dd: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:51:01 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization started 
+2018-06-14 08:51:02 [main] [INFO] o.s.w.c.s.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:51:02 PHT 2018]; root of context hierarchy 
+2018-06-14 08:51:02 [main] [INFO] o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml] 
+2018-06-14 08:51:04 [main] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6579cdbb: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:51:04 [main] [INFO] o.s.j.d.DriverManagerDataSource - Loaded JDBC driver: org.postgresql.Driver 
+2018-06-14 08:51:04 [main] [INFO] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final} 
+2018-06-14 08:51:04 [main] [INFO] org.hibernate.Version - HHH000412: Hibernate Core {4.2.7.Final} 
+2018-06-14 08:51:04 [main] [INFO] org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found 
+2018-06-14 08:51:04 [main] [INFO] org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist 
+2018-06-14 08:51:05 [main] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2018-06-14 08:51:05 [main] [INFO] o.h.e.j.internal.LobCreatorBuilder - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+2018-06-14 08:51:06 [main] [INFO] o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions) 
+2018-06-14 08:51:06 [main] [INFO] o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory 
+2018-06-14 08:51:07 [main] [INFO] o.h.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache 
+2018-06-14 08:51:07 [main] [INFO] o.h.c.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache 
+2018-06-14 08:51:08 [main] [INFO] o.s.o.h.HibernateTransactionManager - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@44084713] of Hibernate SessionFactory for HibernateTransactionManager 
+2018-06-14 08:51:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Root mapping to handler '/' 
+2018-06-14 08:51:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listPersonnel] onto handler '/listPersonnel' 
+2018-06-14 08:51:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deletePersonnel] onto handler '/deletePersonnel' 
+2018-06-14 08:51:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnelByFile] onto handler '/addPersonnelByFile' 
+2018-06-14 08:51:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listRoles] onto handler '/listRoles' 
+2018-06-14 08:51:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/manageRoles] onto handler '/manageRoles' 
+2018-06-14 08:51:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteRole] onto handler '/deleteRole' 
+2018-06-14 08:51:08 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnel] onto handler '/addPersonnel' 
+2018-06-14 08:51:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updatePersonnel] onto handler '/updatePersonnel' 
+2018-06-14 08:51:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addRole] onto handler '/addRole' 
+2018-06-14 08:51:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateRole] onto handler '/updateRole' 
+2018-06-14 08:51:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listProject] onto handler '/listProject' 
+2018-06-14 08:51:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteProject] onto handler '/deleteProject' 
+2018-06-14 08:51:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addProject] onto handler '/addProject' 
+2018-06-14 08:51:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateProject] onto handler '/updateProject' 
+2018-06-14 08:51:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/personnelManager] onto handler '/personnelManager' 
+2018-06-14 08:51:10 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization completed in 8456 ms 
+2018-06-14 08:52:04 [Thread-2] [INFO] o.s.w.c.s.XmlWebApplicationContext - Closing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:51:02 PHT 2018]; root of context hierarchy 
+2018-06-14 08:52:04 [Thread-2] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6579cdbb: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:52:27 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization started 
+2018-06-14 08:52:27 [main] [INFO] o.s.w.c.s.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:52:27 PHT 2018]; root of context hierarchy 
+2018-06-14 08:52:27 [main] [INFO] o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml] 
+2018-06-14 08:52:29 [main] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@77b3752b: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:52:29 [main] [INFO] o.s.j.d.DriverManagerDataSource - Loaded JDBC driver: org.postgresql.Driver 
+2018-06-14 08:52:30 [main] [INFO] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final} 
+2018-06-14 08:52:30 [main] [INFO] org.hibernate.Version - HHH000412: Hibernate Core {4.2.7.Final} 
+2018-06-14 08:52:30 [main] [INFO] org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found 
+2018-06-14 08:52:30 [main] [INFO] org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist 
+2018-06-14 08:52:31 [main] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2018-06-14 08:52:31 [main] [INFO] o.h.e.j.internal.LobCreatorBuilder - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+2018-06-14 08:52:32 [main] [INFO] o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions) 
+2018-06-14 08:52:32 [main] [INFO] o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory 
+2018-06-14 08:52:32 [main] [INFO] o.h.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache 
+2018-06-14 08:52:32 [main] [INFO] o.h.c.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache 
+2018-06-14 08:52:33 [main] [INFO] o.s.o.h.HibernateTransactionManager - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@79604abe] of Hibernate SessionFactory for HibernateTransactionManager 
+2018-06-14 08:52:34 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Root mapping to handler '/' 
+2018-06-14 08:52:34 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listPersonnel] onto handler '/listPersonnel' 
+2018-06-14 08:52:34 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deletePersonnel] onto handler '/deletePersonnel' 
+2018-06-14 08:52:34 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnelByFile] onto handler '/addPersonnelByFile' 
+2018-06-14 08:52:34 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listRoles] onto handler '/listRoles' 
+2018-06-14 08:52:34 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/manageRoles] onto handler '/manageRoles' 
+2018-06-14 08:52:34 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteRole] onto handler '/deleteRole' 
+2018-06-14 08:52:34 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnel] onto handler '/addPersonnel' 
+2018-06-14 08:52:35 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updatePersonnel] onto handler '/updatePersonnel' 
+2018-06-14 08:52:35 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addRole] onto handler '/addRole' 
+2018-06-14 08:52:35 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateRole] onto handler '/updateRole' 
+2018-06-14 08:52:35 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listProject] onto handler '/listProject' 
+2018-06-14 08:52:35 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteProject] onto handler '/deleteProject' 
+2018-06-14 08:52:35 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addProject] onto handler '/addProject' 
+2018-06-14 08:52:35 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateProject] onto handler '/updateProject' 
+2018-06-14 08:52:35 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/personnelManager] onto handler '/personnelManager' 
+2018-06-14 08:52:36 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization completed in 9084 ms 
+2018-06-14 08:53:41 [Thread-2] [INFO] o.s.w.c.s.XmlWebApplicationContext - Closing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:52:27 PHT 2018]; root of context hierarchy 
+2018-06-14 08:53:41 [Thread-2] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@77b3752b: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:54:02 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization started 
+2018-06-14 08:54:02 [main] [INFO] o.s.w.c.s.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:54:02 PHT 2018]; root of context hierarchy 
+2018-06-14 08:54:02 [main] [INFO] o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml] 
+2018-06-14 08:54:04 [main] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4e3f2908: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
+2018-06-14 08:54:04 [main] [INFO] o.s.j.d.DriverManagerDataSource - Loaded JDBC driver: org.postgresql.Driver 
+2018-06-14 08:54:05 [main] [INFO] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.2.Final} 
+2018-06-14 08:54:05 [main] [INFO] org.hibernate.Version - HHH000412: Hibernate Core {4.2.7.Final} 
+2018-06-14 08:54:05 [main] [INFO] org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found 
+2018-06-14 08:54:05 [main] [INFO] org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist 
+2018-06-14 08:54:06 [main] [INFO] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2018-06-14 08:54:06 [main] [INFO] o.h.e.j.internal.LobCreatorBuilder - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException 
+2018-06-14 08:54:07 [main] [INFO] o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions) 
+2018-06-14 08:54:07 [main] [INFO] o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory 
+2018-06-14 08:54:08 [main] [INFO] o.h.cache.spi.UpdateTimestampsCache - HHH000250: Starting update timestamps cache at region: org.hibernate.cache.spi.UpdateTimestampsCache 
+2018-06-14 08:54:08 [main] [INFO] o.h.c.internal.StandardQueryCache - HHH000248: Starting query cache at region: org.hibernate.cache.internal.StandardQueryCache 
+2018-06-14 08:54:08 [main] [INFO] o.s.o.h.HibernateTransactionManager - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@7d28cdcd] of Hibernate SessionFactory for HibernateTransactionManager 
+2018-06-14 08:54:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Root mapping to handler '/' 
+2018-06-14 08:54:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listPersonnel] onto handler '/listPersonnel' 
+2018-06-14 08:54:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deletePersonnel] onto handler '/deletePersonnel' 
+2018-06-14 08:54:09 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnelByFile] onto handler '/addPersonnelByFile' 
+2018-06-14 08:54:10 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listRoles] onto handler '/listRoles' 
+2018-06-14 08:54:10 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/manageRoles] onto handler '/manageRoles' 
+2018-06-14 08:54:10 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteRole] onto handler '/deleteRole' 
+2018-06-14 08:54:10 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addPersonnel] onto handler '/addPersonnel' 
+2018-06-14 08:54:10 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updatePersonnel] onto handler '/updatePersonnel' 
+2018-06-14 08:54:10 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addRole] onto handler '/addRole' 
+2018-06-14 08:54:10 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateRole] onto handler '/updateRole' 
+2018-06-14 08:54:10 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/listProject] onto handler '/listProject' 
+2018-06-14 08:54:10 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/deleteProject] onto handler '/deleteProject' 
+2018-06-14 08:54:10 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/addProject] onto handler '/addProject' 
+2018-06-14 08:54:10 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/updateProject] onto handler '/updateProject' 
+2018-06-14 08:54:11 [main] [INFO] o.s.w.s.h.BeanNameUrlHandlerMapping - Mapped URL path [/personnelManager] onto handler '/personnelManager' 
+2018-06-14 08:54:12 [main] [INFO] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'mvc': initialization completed in 9632 ms 
+2018-06-14 08:55:08 [Thread-2] [INFO] o.s.w.c.s.XmlWebApplicationContext - Closing WebApplicationContext for namespace 'mvc-servlet': startup date [Thu Jun 14 08:54:02 PHT 2018]; root of context hierarchy 
+2018-06-14 08:55:08 [Thread-2] [INFO] o.s.b.f.s.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4e3f2908: defining beans [personnelDao,dao,contactService,roleService,personnelService,projectService,txManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceMethods,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,dataSource,sessionFactory,viewResolver,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping#0,/,/listPersonnel,/deletePersonnel,/addPersonnelByFile,/listRoles,/manageRoles,/deleteRole,/addPersonnel,/updatePersonnel,/addRole,/updateRole,/listProject,/deleteProject,/addProject,/updateProject,/personnelManager,personnelValidator,roleValidator,projectValidator,messageSource,org.springframework.web.servlet.handler.MappedInterceptor#0,localeResolver,multipartResolver]; root of factory hierarchy 
